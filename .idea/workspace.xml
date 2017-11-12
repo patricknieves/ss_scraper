@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f62b2653-b562-4636-bf1d-62fa701dfeb5" name="Default" comment="" />
+    <list default="true" id="f62b2653-b562-4636-bf1d-62fa701dfeb5" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/Coinmarketcap.py" afterPath="$PROJECT_DIR$/main/Coinmarketcap.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/Scraper.py" afterPath="$PROJECT_DIR$/main/Scraper.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/Shapeshift.py" afterPath="$PROJECT_DIR$/main/Shapeshift.py" />
+    </list>
     <ignored path="Scraper.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -14,9 +22,10 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Scraper$Scraper.coverage" NAME="Scraper Coverage Results" MODIFIED="1510456240318" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
+    <SUITE FILE_PATH="coverage/Scraper$Scraper.coverage" NAME="Scraper Coverage Results" MODIFIED="1510514293644" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
     <SUITE FILE_PATH="coverage/Scraper$Coinmarketcap.coverage" NAME="Coinmarketcap Coverage Results" MODIFIED="1510420584891" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
     <SUITE FILE_PATH="coverage/Scraper$Shapeshift.coverage" NAME="Shapeshift Coverage Results" MODIFIED="1510420050854" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
+    <SUITE FILE_PATH="coverage/Scraper$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1510489585764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -55,12 +64,11 @@
       <file leaf-file-name="Coinmarketcap.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/Coinmarketcap.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="63">
+              <caret line="3" column="10" lean-forward="false" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
-                <marker date="1510426735230" expanded="true" signature="441:508" ph="INSERT INTO coinmarketcap... " />
-                <marker date="1510426735230" expanded="true" signature="677:704" ph="SELECT * FRO... coinmarketcap" />
+                <marker date="1510506905147" expanded="true" signature="514:581" ph="INSERT INTO coinmarketcap... " />
               </folding>
             </state>
           </provider>
@@ -70,17 +78,24 @@
         <entry file="file://$PROJECT_DIR$/main/Scraper.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="378">
-              <caret line="18" column="31" lean-forward="true" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+              <caret line="18" column="24" lean-forward="false" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
               <folding>
-                <element signature="e#0#14#0" expanded="true" />
-                <marker date="1510458133331" expanded="true" signature="2133:2235" ph="INSERT INTO exchanges... " />
-                <marker date="1510458133331" expanded="true" signature="4122:4268" ph="UPDATE excha... " />
-                <marker date="1510458133331" expanded="true" signature="4128:4173" ph="INSERT INTO shapeshift... " />
-                <marker date="1510458133331" expanded="true" signature="5358:5392" ph="UPDATE excha... " />
-                <marker date="1510458133331" expanded="true" signature="5358:5419" ph="UPDATE excha... " />
-                <marker date="1510458133331" expanded="true" signature="5358:5527" ph="UPDATE excha... " />
-                <marker date="1510458133331" expanded="true" signature="5677:5738" ph="UPDATE excha... " />
-                <marker date="1510458133331" expanded="true" signature="5986:6047" ph="UPDATE excha... " />
+                <element signature="e#0#31#0" expanded="true" />
+                <marker date="1510514707349" expanded="true" signature="340:372" ph="UPDATE excha... " />
+                <marker date="1510514707349" expanded="true" signature="340:386" ph="UPDATE excha... " />
+                <marker date="1510514707349" expanded="true" signature="2816:2860" ph="SELECT fee F... shapeshift" />
+                <marker date="1510514707349" expanded="true" signature="2953:3002" ph="SELECT value... coinmarketcap" />
+                <marker date="1510514707349" expanded="true" signature="3098:3147" ph="SELECT value... coinmarketcap" />
+                <marker date="1510514707349" expanded="true" signature="3259:3421" ph="INSERT INTO exchanges... " />
+                <marker date="1510514707349" expanded="true" signature="5728:5874" ph="UPDATE excha... " />
+                <marker date="1510514707349" expanded="true" signature="5734:5778" ph="INSERT INTO shapeshift... " />
+                <marker date="1510514707349" expanded="true" signature="9121:9268" ph="UPDATE excha... " />
+                <marker date="1510514707349" expanded="true" signature="12161:12308" ph="UPDATE excha... " />
+                <marker date="1510514707349" expanded="true" signature="13398:13432" ph="UPDATE excha... " />
+                <marker date="1510514707349" expanded="true" signature="13398:13459" ph="UPDATE excha... " />
+                <marker date="1510514707349" expanded="true" signature="13398:13569" ph="UPDATE excha... " />
+                <marker date="1510514707349" expanded="true" signature="13719:13780" ph="UPDATE excha... " />
+                <marker date="1510514707349" expanded="true" signature="14030:14091" ph="UPDATE excha... " />
               </folding>
             </state>
           </provider>
@@ -89,17 +104,15 @@
       <file leaf-file-name="Shapeshift.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/Shapeshift.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="22" column="25" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="22" selection-end-column="25" />
+            <state relative-caret-position="483">
+              <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
-                <marker date="1510446655871" expanded="true" signature="446:485" ph="SELECT 1 FRO... shapeshift" />
-                <marker date="1510446655871" expanded="true" signature="446:488" ph="SELECT EXIST... " />
-                <marker date="1510446655871" expanded="true" signature="446:496" ph="SELECT 1 FRO... shapeshift" />
-                <marker date="1510446655871" expanded="true" signature="446:508" ph="SELECT EXIST... " />
-                <marker date="1510446655871" expanded="true" signature="594:646" ph="INSERT INTO shapeshift... " />
-                <marker date="1510446655871" expanded="true" signature="786:810" ph="SELECT * FRO... shapeshift" />
-                <marker date="1510446655871" expanded="true" signature="786:812" ph="SELECT * FRO... shapeshift" />
+                <marker date="1510506905162" expanded="true" signature="516:555" ph="SELECT 1 FRO... shapeshift" />
+                <marker date="1510506905162" expanded="true" signature="516:558" ph="SELECT EXIST... " />
+                <marker date="1510506905162" expanded="true" signature="516:566" ph="SELECT 1 FRO... shapeshift" />
+                <marker date="1510506905162" expanded="true" signature="516:578" ph="SELECT EXIST... " />
+                <marker date="1510506905162" expanded="true" signature="680:732" ph="INSERT INTO shapeshift... " />
               </folding>
             </state>
           </provider>
@@ -113,6 +126,15 @@
         <option value="Python Script" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>fromtimestamp</find>
+      <find>Oder</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -131,8 +153,9 @@
         <option value="$PROJECT_DIR$/.idea/main/Shapeshift.py" />
         <option value="$PROJECT_DIR$/.idea/main/Car.py" />
         <option value="$PROJECT_DIR$/main/Car.py" />
-        <option value="$PROJECT_DIR$/main/Coinmarketcap.py" />
+        <option value="$PROJECT_DIR$/main/__init__.py" />
         <option value="$PROJECT_DIR$/main/Shapeshift.py" />
+        <option value="$PROJECT_DIR$/main/Coinmarketcap.py" />
         <option value="$PROJECT_DIR$/main/Scraper.py" />
       </list>
     </option>
@@ -144,11 +167,31 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1844" />
-    <option name="y" value="-17" />
-    <option name="width" value="1932" />
-    <option name="height" value="1037" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1098" />
   </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Python</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>PyCompatibilityInspection</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages ProjectPane="true" />
@@ -216,24 +259,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.Scraper">
-    <configuration name="Car (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Python27\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/main" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Scraper" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/Car.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
     <configuration name="Coinmarketcap" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -284,6 +309,24 @@
       <module name="Scraper" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/Shapeshift.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/main" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Scraper" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/__init__.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -903,17 +946,18 @@
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.Car (1)" />
-      <item index="1" class="java.lang.String" itemvalue="Python.Shapeshift" />
-      <item index="2" class="java.lang.String" itemvalue="Python.shapeshift_fees" />
-      <item index="3" class="java.lang.String" itemvalue="Python.Coinmarketcap" />
-      <item index="4" class="java.lang.String" itemvalue="Python.Scraper" />
+      <item index="0" class="java.lang.String" itemvalue="Python.Shapeshift" />
+      <item index="1" class="java.lang.String" itemvalue="Python.shapeshift_fees" />
+      <item index="2" class="java.lang.String" itemvalue="Python.Coinmarketcap" />
+      <item index="3" class="java.lang.String" itemvalue="Python.Scraper" />
+      <item index="4" class="java.lang.String" itemvalue="Python.__init__" />
     </list>
     <recent_temporary>
-      <list size="3">
+      <list size="4">
         <item index="0" class="java.lang.String" itemvalue="Python.Scraper" />
-        <item index="1" class="java.lang.String" itemvalue="Python.Coinmarketcap" />
-        <item index="2" class="java.lang.String" itemvalue="Python.Shapeshift" />
+        <item index="1" class="java.lang.String" itemvalue="Python.__init__" />
+        <item index="2" class="java.lang.String" itemvalue="Python.Coinmarketcap" />
+        <item index="3" class="java.lang.String" itemvalue="Python.Shapeshift" />
       </list>
     </recent_temporary>
   </component>
@@ -934,15 +978,15 @@
       <workItem from="1510407305552" duration="720000" />
       <workItem from="1510408251841" duration="201000" />
       <workItem from="1510408491422" duration="220000" />
-      <workItem from="1510408742480" duration="32306000" />
+      <workItem from="1510408742480" duration="58368000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37398000" />
+    <option name="totallyTimeSpent" value="63460000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -952,8 +996,8 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3609914" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24890351" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286638" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -965,7 +1009,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39978448" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3497807" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -998,7 +1042,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="15" />
+      <option name="time" value="109" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1013,13 +1057,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1510446655871" expanded="true" signature="446:485" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1510446655871" expanded="true" signature="446:488" ph="SELECT EXIST... " />
-            <marker date="1510446655871" expanded="true" signature="446:496" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1510446655871" expanded="true" signature="446:508" ph="SELECT EXIST... " />
-            <marker date="1510446655871" expanded="true" signature="594:646" ph="INSERT INTO shapeshift... " />
-            <marker date="1510446655871" expanded="true" signature="786:810" ph="SELECT * FRO... shapeshift" />
-            <marker date="1510446655871" expanded="true" signature="786:812" ph="SELECT * FRO... shapeshift" />
+            <marker date="1510506905162" expanded="true" signature="516:555" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1510506905162" expanded="true" signature="516:558" ph="SELECT EXIST... " />
+            <marker date="1510506905162" expanded="true" signature="516:566" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1510506905162" expanded="true" signature="516:578" ph="SELECT EXIST... " />
+            <marker date="1510506905162" expanded="true" signature="680:732" ph="INSERT INTO shapeshift... " />
           </folding>
         </state>
       </provider>
@@ -1030,13 +1072,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1510446655871" expanded="true" signature="446:485" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1510446655871" expanded="true" signature="446:488" ph="SELECT EXIST... " />
-            <marker date="1510446655871" expanded="true" signature="446:496" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1510446655871" expanded="true" signature="446:508" ph="SELECT EXIST... " />
-            <marker date="1510446655871" expanded="true" signature="594:646" ph="INSERT INTO shapeshift... " />
-            <marker date="1510446655871" expanded="true" signature="786:810" ph="SELECT * FRO... shapeshift" />
-            <marker date="1510446655871" expanded="true" signature="786:812" ph="SELECT * FRO... shapeshift" />
+            <marker date="1510506905162" expanded="true" signature="516:555" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1510506905162" expanded="true" signature="516:558" ph="SELECT EXIST... " />
+            <marker date="1510506905162" expanded="true" signature="516:566" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1510506905162" expanded="true" signature="516:578" ph="SELECT EXIST... " />
+            <marker date="1510506905162" expanded="true" signature="680:732" ph="INSERT INTO shapeshift... " />
           </folding>
         </state>
       </provider>
@@ -1047,13 +1087,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1510446655871" expanded="true" signature="446:485" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1510446655871" expanded="true" signature="446:488" ph="SELECT EXIST... " />
-            <marker date="1510446655871" expanded="true" signature="446:496" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1510446655871" expanded="true" signature="446:508" ph="SELECT EXIST... " />
-            <marker date="1510446655871" expanded="true" signature="594:646" ph="INSERT INTO shapeshift... " />
-            <marker date="1510446655871" expanded="true" signature="786:810" ph="SELECT * FRO... shapeshift" />
-            <marker date="1510446655871" expanded="true" signature="786:812" ph="SELECT * FRO... shapeshift" />
+            <marker date="1510506905162" expanded="true" signature="516:555" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1510506905162" expanded="true" signature="516:558" ph="SELECT EXIST... " />
+            <marker date="1510506905162" expanded="true" signature="516:566" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1510506905162" expanded="true" signature="516:578" ph="SELECT EXIST... " />
+            <marker date="1510506905162" expanded="true" signature="680:732" ph="INSERT INTO shapeshift... " />
           </folding>
         </state>
       </provider>
@@ -1064,13 +1102,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1510446655871" expanded="true" signature="446:485" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1510446655871" expanded="true" signature="446:488" ph="SELECT EXIST... " />
-            <marker date="1510446655871" expanded="true" signature="446:496" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1510446655871" expanded="true" signature="446:508" ph="SELECT EXIST... " />
-            <marker date="1510446655871" expanded="true" signature="594:646" ph="INSERT INTO shapeshift... " />
-            <marker date="1510446655871" expanded="true" signature="786:810" ph="SELECT * FRO... shapeshift" />
-            <marker date="1510446655871" expanded="true" signature="786:812" ph="SELECT * FRO... shapeshift" />
+            <marker date="1510506905162" expanded="true" signature="516:555" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1510506905162" expanded="true" signature="516:558" ph="SELECT EXIST... " />
+            <marker date="1510506905162" expanded="true" signature="516:566" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1510506905162" expanded="true" signature="516:578" ph="SELECT EXIST... " />
+            <marker date="1510506905162" expanded="true" signature="680:732" ph="INSERT INTO shapeshift... " />
           </folding>
         </state>
       </provider>
@@ -1143,31 +1179,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/Coinmarketcap.py">
+    <entry file="file://$PROJECT_DIR$/main/Shapeshift.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="483">
+          <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1510426735230" expanded="true" signature="441:508" ph="INSERT INTO coinmarketcap... " />
-            <marker date="1510426735230" expanded="true" signature="677:704" ph="SELECT * FRO... coinmarketcap" />
+            <marker date="1510506905162" expanded="true" signature="516:555" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1510506905162" expanded="true" signature="516:558" ph="SELECT EXIST... " />
+            <marker date="1510506905162" expanded="true" signature="516:566" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1510506905162" expanded="true" signature="516:578" ph="SELECT EXIST... " />
+            <marker date="1510506905162" expanded="true" signature="680:732" ph="INSERT INTO shapeshift... " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/Shapeshift.py">
+    <entry file="file://$PROJECT_DIR$/main/Coinmarketcap.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="22" column="25" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="22" selection-end-column="25" />
+        <state relative-caret-position="63">
+          <caret line="3" column="10" lean-forward="false" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1510446655871" expanded="true" signature="446:485" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1510446655871" expanded="true" signature="446:488" ph="SELECT EXIST... " />
-            <marker date="1510446655871" expanded="true" signature="446:496" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1510446655871" expanded="true" signature="446:508" ph="SELECT EXIST... " />
-            <marker date="1510446655871" expanded="true" signature="594:646" ph="INSERT INTO shapeshift... " />
-            <marker date="1510446655871" expanded="true" signature="786:810" ph="SELECT * FRO... shapeshift" />
-            <marker date="1510446655871" expanded="true" signature="786:812" ph="SELECT * FRO... shapeshift" />
+            <marker date="1510506905147" expanded="true" signature="514:581" ph="INSERT INTO coinmarketcap... " />
           </folding>
         </state>
       </provider>
@@ -1175,17 +1208,24 @@
     <entry file="file://$PROJECT_DIR$/main/Scraper.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
-          <caret line="18" column="31" lean-forward="true" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+          <caret line="18" column="24" lean-forward="false" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
-            <marker date="1510458133331" expanded="true" signature="2133:2235" ph="INSERT INTO exchanges... " />
-            <marker date="1510458133331" expanded="true" signature="4122:4268" ph="UPDATE excha... " />
-            <marker date="1510458133331" expanded="true" signature="4128:4173" ph="INSERT INTO shapeshift... " />
-            <marker date="1510458133331" expanded="true" signature="5358:5392" ph="UPDATE excha... " />
-            <marker date="1510458133331" expanded="true" signature="5358:5419" ph="UPDATE excha... " />
-            <marker date="1510458133331" expanded="true" signature="5358:5527" ph="UPDATE excha... " />
-            <marker date="1510458133331" expanded="true" signature="5677:5738" ph="UPDATE excha... " />
-            <marker date="1510458133331" expanded="true" signature="5986:6047" ph="UPDATE excha... " />
+            <element signature="e#0#31#0" expanded="true" />
+            <marker date="1510514707349" expanded="true" signature="340:372" ph="UPDATE excha... " />
+            <marker date="1510514707349" expanded="true" signature="340:386" ph="UPDATE excha... " />
+            <marker date="1510514707349" expanded="true" signature="2816:2860" ph="SELECT fee F... shapeshift" />
+            <marker date="1510514707349" expanded="true" signature="2953:3002" ph="SELECT value... coinmarketcap" />
+            <marker date="1510514707349" expanded="true" signature="3098:3147" ph="SELECT value... coinmarketcap" />
+            <marker date="1510514707349" expanded="true" signature="3259:3421" ph="INSERT INTO exchanges... " />
+            <marker date="1510514707349" expanded="true" signature="5728:5874" ph="UPDATE excha... " />
+            <marker date="1510514707349" expanded="true" signature="5734:5778" ph="INSERT INTO shapeshift... " />
+            <marker date="1510514707349" expanded="true" signature="9121:9268" ph="UPDATE excha... " />
+            <marker date="1510514707349" expanded="true" signature="12161:12308" ph="UPDATE excha... " />
+            <marker date="1510514707349" expanded="true" signature="13398:13432" ph="UPDATE excha... " />
+            <marker date="1510514707349" expanded="true" signature="13398:13459" ph="UPDATE excha... " />
+            <marker date="1510514707349" expanded="true" signature="13398:13569" ph="UPDATE excha... " />
+            <marker date="1510514707349" expanded="true" signature="13719:13780" ph="UPDATE excha... " />
+            <marker date="1510514707349" expanded="true" signature="14030:14091" ph="UPDATE excha... " />
           </folding>
         </state>
       </provider>
