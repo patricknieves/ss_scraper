@@ -1,6 +1,12 @@
 import MySQLdb
 import requests
 
+def create_table():
+    db = MySQLdb.connect(host="localhost", user="root", passwd="admin", db="scraper")
+    cur = db.cursor()
+    cur.execute("CREATE TABLE IF NOT EXISTS shapeshift (symbol varchar(45) NOT NULL, fee double DEFAULT NULL, PRIMARY KEY (symbol))")
+    db.close()
+
 def update_shapeshift_fees():
     db = MySQLdb.connect(host="localhost", user="root", passwd="admin", db="scraper")
     cur = db.cursor()

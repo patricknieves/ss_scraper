@@ -6,35 +6,86 @@ import datetime
 import time
 import Coinmarketcap
 import Shapeshift
+import atexit
 
 def main():
-    #Update Coinmarketcap data and Shapeshift Fees
-    #Coinmarketcap.update_coinmarketcap_data()
-    #Shapeshift.update_shapeshift_fees()
+    # Create MySQL Tables
+    Shapeshift.create_table()
+    Coinmarketcap.create_table()
+    create_table()
 
     previous_exchanges = []
-    # TODO delete method at the end
+    last_time_updated_cmc = None
+    last_time_updated_ss = None
+
+    # Only used locally for testing
     delete_all_data()
 
-    for number in range(3):
-        new_exchanges = get_last_transactions(previous_exchanges)
+    while True:
+        # Update Coinmarketcap data every 10 min
+        if not last_time_updated_cmc or (time.time() - last_time_updated_cmc) > 600:
+            print ("Updating CMC Data")
+            Coinmarketcap.update_coinmarketcap_data()
+            last_time_updated_cmc = time.time()
+        # Update Shapeshift fees every 30 min
+        if not last_time_updated_ss or (time.time() - last_time_updated_ss) > 1800:
+            print ("Updating Shapeshift Fees")
+            Shapeshift.update_shapeshift_fees()
+            last_time_updated_ss = time.time()
+
+        result = get_last_transactions(previous_exchanges)
+        new_exchanges = result["new_exchanges"]
+        # After every loop: Wait the half of the duration of retrieved 50 Txs
+        duration_to_wait = result["duration"].total_seconds()/2
         if new_exchanges:
             previous_exchanges = new_exchanges
             print ("Starting loop: " + str(datetime.datetime.now()))
             start_time = time.time()
+            print ("Search for Ethereum Txs...")
             get_ethereum_transaction(new_exchanges)
+            print ("Search for Litecoin Txs...")
             get_litecoin_transaction(new_exchanges)
+            print ("Search for Bitcoin Txs...")
             get_bitcoin_transaction(new_exchanges)
             print ("Finished loop: " + str(datetime.datetime.now()))
             elapsed_time = time.time() - start_time
-            if elapsed_time < 180:
-                time.sleep(180 - elapsed_time)
+            if elapsed_time < duration_to_wait:
+                print ("Done! Wait " + str(duration_to_wait - elapsed_time) + " seconds")
+                time.sleep(duration_to_wait - elapsed_time)
+
         else:
-            # Sleep for x seconds
-            time.sleep(180)
+            print ("No Transactions. Wait " + str(duration_to_wait) + " seconds")
+            time.sleep(duration_to_wait)
+
+def create_database():
+    db = MySQLdb.connect(host="localhost", user="root", passwd="admin")
+    cur = db.cursor()
+    cur.execute("CREATE DATABASE IF NOT EXISTS scraper")
+    db.close()
+
+def create_table():
+    cur.execute("CREATE TABLE IF NOT EXISTS exchanges ("
+                    "id int(11) NOT NULL AUTO_INCREMENT,"
+                    "currency_from varchar(45) DEFAULT NULL,"
+                    "currency_to varchar(45) DEFAULT NULL,"
+                    "amount_from float DEFAULT NULL,"
+                    "amount_to float DEFAULT NULL,"
+                    "fee_from float DEFAULT NULL,"
+                    "fee_to float DEFAULT NULL,"
+                    "fee_exchange float DEFAULT NULL,"
+                    "address_from varchar(120) DEFAULT NULL,"
+                    "address_to varchar(120) DEFAULT NULL,"
+                    "hash_from varchar(120) DEFAULT NULL,"
+                    "hash_to varchar(120) DEFAULT NULL,"
+                    "time_from datetime DEFAULT NULL,"
+                    "time_to datetime DEFAULT NULL,"
+                    "time_exchange datetime DEFAULT NULL,"
+                    "dollarvalue_from float DEFAULT NULL,"
+                    "dollarvalue_to float DEFAULT NULL,"
+                    "PRIMARY KEY (id))")
 
 
-# Delete all data in DB (not used)
+# Delete all found exchanges in DB
 def delete_all_data():
     cur.execute("TRUNCATE TABLE exchanges")
 
@@ -43,9 +94,12 @@ def get_last_transactions(previous_exchanges):
     # Request last 50 Transactions from Shapeshift
     new_exchanges = requests.get("https://shapeshift.io/recenttx/50").json()
 
+    duration = datetime.datetime.utcfromtimestamp(new_exchanges[1]["timestamp"]) - datetime.datetime.utcfromtimestamp(new_exchanges[-1]["timestamp"])
+    print ("Time dif (All): " + str(duration))
     # Take BTC, ETH and LTC exchanges only
     filtered_new_exchanges = [exchange for exchange in new_exchanges if
                               "BTC" == exchange["curIn"] or "ETH" == exchange["curIn"] or "LTC" == exchange["curIn"]]
+
     # Take new exchanges only
     if previous_exchanges:
         i = 0
@@ -59,12 +113,15 @@ def get_last_transactions(previous_exchanges):
                       filtered_new_exchanges[i]["amount"])
             i = i + 1
         if new is False and i != 0:
+            count_old = len(filtered_new_exchanges)
             filtered_new_exchanges = filtered_new_exchanges[:(i - 1)]
+            print (str((count_old - len(filtered_new_exchanges)))  + " Txs removed from " + str(count_old))
+        else:
+            print ("Nothing filtered")
 
     # Write data to MySQL DB
+    print ("Insert " + str(len(filtered_new_exchanges)) + " Transactions")
     for exchange in reversed(filtered_new_exchanges):
-        print exchange["curIn"] + " " + exchange["curOut"] + " " + str(exchange["amount"]) + " " + str(
-            exchange["timestamp"])
         try:
             #Get corresponding Shapeshift Fee and Coinmarketcap data
             cur.execute("SELECT fee FROM shapeshift WHERE symbol = %s", exchange["curOut"])
@@ -82,7 +139,7 @@ def get_last_transactions(previous_exchanges):
         except:
             db.rollback()
 
-    return filtered_new_exchanges
+    return {"new_exchanges": filtered_new_exchanges, "duration": duration}
 
 
 def get_ethereum_transaction(new_exchanges):
@@ -92,10 +149,8 @@ def get_ethereum_transaction(new_exchanges):
         # Request last block number
         last_block_number = int(requests.get("https://api.infura.io/v1/jsonrpc/mainnet/eth_blockNumber?token=Wh9YuEIhi7tqseXn8550").json()["result"], 16)
         for number in range(60):
-            # Sleep for 7 seconds
-            #time.sleep(3)
             # Get Block
-            print (str(last_block_number - number))
+            # print (str(last_block_number - number))
             block = requests.get("https://api.infura.io/v1/jsonrpc/mainnet/eth_getBlockByNumber?params=%5B%22" + hex(last_block_number - number) + "%22%2C%20true%5D&token=Wh9YuEIhi7tqseXn8550").json()["result"]
             transactions = block["transactions"]
             if transactions:
@@ -134,10 +189,8 @@ def get_bitcoin_transaction(new_exchanges):
         # Request last block number
         last_block_number = requests.get("https://blockchain.info/de/latestblock").json()["height"]
         for number in range(4):
-            # Sleep for 7 seconds
-            #time.sleep(3)
             # Get Block
-            print (str(last_block_number - number))
+            # print (str(last_block_number - number))
             block = requests.get("https://blockchain.info/de/block-height/" + (str(last_block_number - number)) + "?format=json").json()["blocks"][0]
             transactions = block["tx"]
             if transactions:
@@ -154,7 +207,7 @@ def get_bitcoin_transaction(new_exchanges):
                             time_exchange = datetime.datetime.utcfromtimestamp(exchange["timestamp"])
                             time_transaction = datetime.datetime.utcfromtimestamp(transaction["time"])
                             # BC1 Tx must happen before SS Tx (SS Tx Time is when money recieved)
-                            if exchange["amount"]*100000000 == out["value"] and ((time_exchange - time_transaction)).total_seconds() > -180:
+                            if exchange["amount"]*100000000 == out["value"] and ((time_exchange - time_transaction)).total_seconds() > -300:
                                 exchange_details = requests.get(
                                     "https://shapeshift.io/txStat/" + out["addr"]).json()
                                 if exchange_details["status"] == "complete" and exchange_details["outgoingType"] == exchange[
@@ -183,14 +236,13 @@ def get_litecoin_transaction(new_exchanges):
     filtered_new__exchanges = [exchange for exchange in new_exchanges if "LTC" == exchange["curIn"]]
     if filtered_new__exchanges:
         # Request last block number
-        #time.sleep(320)
         last_block_number = requests.get("https://chain.so/api/v2/get_info/LTC").json()["data"]["blocks"]
         for number in range(29):
-            # Sleep for 5 seconds
+            # Sleep for 50 seconds after 10 Txs (API Limit)
             if (number%10 == 9):
                 time.sleep(50)
             # Get Block
-            print (str(last_block_number - number))
+            #print (str(last_block_number - number))
             block = requests.get("https://chain.so/api/v2/block/LTC/" + (str(last_block_number - number))).json()["data"]
             transactions = block["txs"]
             if transactions:
@@ -238,7 +290,14 @@ def search_corresponding_transaction(currency, tx_hash, exchange_id):
         transaction = requests.get("https://api.blockcypher.com/v1/ltc/main/txs/" + tx_hash).json()
         cur.execute("UPDATE exchanges SET  time_to = %s, fee_to = %s WHERE id = %s", (transaction["received"].replace("T", " ")[:-5], (transaction["fees"] / 100000000), exchange_id))
 
+def closeConnection():
+    print "Scraper stopped!"
+    db.close()
 
+# Create MySQL Database and connect
+create_database()
 db = MySQLdb.connect(host="localhost", user="root", passwd="admin", db="scraper")
 cur = db.cursor()
+atexit.register(closeConnection)
+
 if __name__ == "__main__": main()
