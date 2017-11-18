@@ -159,14 +159,16 @@ def get_ethereum_transaction(new_exchanges):
             with Controller.from_port(port = 9051) as controller:
                 controller.authenticate()
                 controller.signal(Signal.NEWNYM)
+            transactions = None
             try:
                 block = requests.get("https://api.infura.io/v1/jsonrpc/mainnet/eth_getBlockByNumber?params=%5B%22" + hex(last_block_number - number) + "%22%2C%20true%5D&token=Wh9YuEIhi7tqseXn8550").json()["result"]
+                transactions = block["transactions"]
             except:
+                print ("Failed --------------------------------------------------------------")
                 print ("Failed at Blocknumber: " + str(last_block_number - number))
                 print ("Failed at Blocknumber Hex: " + hex(last_block_number - number))
                 print("Unexpected error:", sys.exc_info()[0])
-                sys.exit(0)
-            transactions = block["transactions"]
+                #sys.exit(0)
             if transactions:
                 # Check if Block much older than Exchanges
                 time_oldest_transaction = datetime.datetime.utcfromtimestamp(filtered_new__exchanges[-1]["timestamp"])
@@ -228,7 +230,7 @@ def get_bitcoin_transaction(new_exchanges):
                             time_exchange = datetime.datetime.utcfromtimestamp(exchange["timestamp"])
                             time_transaction = datetime.datetime.utcfromtimestamp(transaction["time"])
                             # BC1 Tx must happen before SS Tx (SS Tx Time is when money recieved)
-                            if exchange["amount"]*100000000 == out["value"] and ((time_exchange - time_transaction)).total_seconds() > -300:
+                            if exchange["amount"]*100000000 == out["value"] and ((time_exchange - time_transaction)).total_seconds() > -600:
                                 # Change Ip Address
                                 with Controller.from_port(port = 9051) as controller:
                                     controller.authenticate()
