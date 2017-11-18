@@ -7,6 +7,10 @@ import time
 import Coinmarketcap
 import Shapeshift
 import atexit
+from stem import Signal
+from stem.control import Controller
+import mysql
+import mysql.connector
 
 def main():
     # Create MySQL Tables
@@ -25,6 +29,9 @@ def main():
         # Update Coinmarketcap data every 10 min
         if not last_time_updated_cmc or (time.time() - last_time_updated_cmc) > 600:
             print ("Updating CMC Data")
+            with Controller.from_port(port = 9051) as controller:
+                controller.authenticate()
+                controller.signal(Signal.NEWNYM)
             Coinmarketcap.update_coinmarketcap_data()
             last_time_updated_cmc = time.time()
         # Update Shapeshift fees every 30 min
@@ -58,6 +65,7 @@ def main():
             time.sleep(duration_to_wait)
 
 def create_database():
+    #db = mysql.connector.connect(user="scraper@scraper-master", password="Sebis2017", host="scraper-master.mysql.database.azure.com", port="3306")
     db = MySQLdb.connect(host="localhost", user="root", passwd="admin")
     cur = db.cursor()
     cur.execute("CREATE DATABASE IF NOT EXISTS scraper")
@@ -115,7 +123,7 @@ def get_last_transactions(previous_exchanges):
         if new is False and i != 0:
             count_old = len(filtered_new_exchanges)
             filtered_new_exchanges = filtered_new_exchanges[:(i - 1)]
-            print (str((count_old - len(filtered_new_exchanges)))  + " Txs removed from " + str(count_old))
+            print (str((count_old - len(filtered_new_exchanges))) + " Txs removed from " + str(count_old))
         else:
             print ("Nothing filtered")
 
@@ -213,6 +221,9 @@ def get_bitcoin_transaction(new_exchanges):
                                 if exchange_details["status"] == "complete" and exchange_details["outgoingType"] == exchange[
                                     "curOut"]:
                                     # Get fee_from
+                                    with Controller.from_port(port = 9051) as controller:
+                                        controller.authenticate()
+                                        controller.signal(Signal.NEWNYM)
                                     fee_from = requests.get("https://api.blockcypher.com/v1/btc/main/txs/" + transaction["hash"]).json()["fees"] / 100000000
 
                                     # Update DB
@@ -238,9 +249,11 @@ def get_litecoin_transaction(new_exchanges):
         # Request last block number
         last_block_number = requests.get("https://chain.so/api/v2/get_info/LTC").json()["data"]["blocks"]
         for number in range(29):
-            # Sleep for 50 seconds after 10 Txs (API Limit)
-            if (number%10 == 9):
-                time.sleep(50)
+            # Change IP Address after 10 Txs (API Limit)
+            #if (number%10 == 9):
+            with Controller.from_port(port = 9051) as controller:
+                controller.authenticate()
+                controller.signal(Signal.NEWNYM)
             # Get Block
             #print (str(last_block_number - number))
             block = requests.get("https://chain.so/api/v2/block/LTC/" + (str(last_block_number - number))).json()["data"]
@@ -279,6 +292,10 @@ def get_litecoin_transaction(new_exchanges):
                                     break
 
 def search_corresponding_transaction(currency, tx_hash, exchange_id):
+    # Change Ip Address
+    with Controller.from_port(port = 9051) as controller:
+        controller.authenticate()
+        controller.signal(Signal.NEWNYM)
     if currency == "ETH":
         transaction = requests.get("https://api.infura.io/v1/jsonrpc/mainnet/eth_getTransactionByHash?params=%5B%22" + tx_hash + "%22%5D&token=Wh9YuEIhi7tqseXn8550").json()["result"]
         block = requests.get("https://api.infura.io/v1/jsonrpc/mainnet/eth_getBlockByNumber?params=%5B%22" + transaction["blockNumber"] + "%22%2C%20true%5D&token=Wh9YuEIhi7tqseXn8550").json()["result"]
@@ -296,6 +313,7 @@ def closeConnection():
 
 # Create MySQL Database and connect
 create_database()
+#db = mysql.connector.connect(user="scraper@scraper-master", password="Sebis2017", host="scraper-master.mysql.database.azure.com", port="3306", database="scraper")
 db = MySQLdb.connect(host="localhost", user="root", passwd="admin", db="scraper")
 cur = db.cursor()
 atexit.register(closeConnection)

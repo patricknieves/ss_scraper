@@ -1,13 +1,17 @@
 import MySQLdb
 import requests
+import mysql
+import mysql.connector
 
 def create_table():
+    #db = mysql.connector.connect(user="scraper@scraper-master", password="Sebis2017", host="scraper-master.mysql.database.azure.com", port="3306", database="scraper")
     db = MySQLdb.connect(host="localhost", user="root", passwd="admin", db="scraper")
     cur = db.cursor()
     cur.execute("CREATE TABLE IF NOT EXISTS shapeshift (symbol varchar(45) NOT NULL, fee double DEFAULT NULL, PRIMARY KEY (symbol))")
     db.close()
 
 def update_shapeshift_fees():
+    #db = mysql.connector.connect(user="scraper@scraper-master", password="Sebis2017", host="scraper-master.mysql.database.azure.com", port="3306", database="scraper")
     db = MySQLdb.connect(host="localhost", user="root", passwd="admin", db="scraper")
     cur = db.cursor()
 
@@ -18,14 +22,17 @@ def update_shapeshift_fees():
     shapeshift_data = requests.get("https://shapeshift.io/marketinfo/").json()
 
     # Write data to MySQL DB
+   # arr = ["BTC", "ETH", "LTC"]
     for exchange in shapeshift_data:
         currency = exchange["pair"].split('_')[1]
-        cur.execute("SELECT 1 FROM shapeshift WHERE symbol = %s LIMIT 1", currency)
+        #if currency in arr:
+        cur.execute("SELECT 1 FROM shapeshift WHERE symbol=%s LIMIT 1", (currency))
         data = cur.fetchone()
         if data is None:
             try:
                 cur.execute("INSERT INTO shapeshift (symbol, fee) VALUES (%s, %s)", (currency, exchange["minerFee"]))
                 db.commit()
+                #arr.remove(currency)
             except:
                 db.rollback()
     db.close()
