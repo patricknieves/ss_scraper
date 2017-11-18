@@ -24,6 +24,11 @@ def main():
     # Only used locally for testing
     delete_all_data()
 
+    # Update Coinmarketcap data
+    last_time_updated_cmc = update_cmc(last_time_updated_cmc)
+    # Update Shapeshift
+    last_time_updated_ss = update_ssf(last_time_updated_ss)
+
     while True:
         result = get_last_transactions(previous_exchanges)
         new_exchanges = result["new_exchanges"]
@@ -33,16 +38,10 @@ def main():
             print ("Starting loop: " + str(datetime.datetime.now()))
             start_time = time.time()
 
-            # Update Coinmarketcap data every 10 min
-            if not last_time_updated_cmc or (time.time() - last_time_updated_cmc) > 600:
-                print ("Updating CMC Data")
-                Coinmarketcap.update_coinmarketcap_data()
-                last_time_updated_cmc = time.time()
-            # Update Shapeshift fees every 30 min
-            if not last_time_updated_ss or (time.time() - last_time_updated_ss) > 1800:
-                print ("Updating Shapeshift Fees")
-                Shapeshift.update_shapeshift_fees()
-                last_time_updated_ss = time.time()
+            # Update Coinmarketcap data
+            last_time_updated_cmc = update_cmc(last_time_updated_cmc)
+            # Update Shapeshift
+            last_time_updated_ss = update_ssf(last_time_updated_ss)
 
             previous_exchanges = new_exchanges
 
@@ -61,6 +60,23 @@ def main():
         else:
             print ("No Transactions. Wait " + str(duration_to_wait) + " seconds")
             time.sleep(duration_to_wait)
+
+def update_cmc(last_time_updated_cmc):
+    # Update Coinmarketcap data every 10 min
+    if not last_time_updated_cmc or (time.time() - last_time_updated_cmc) > 600:
+        print ("Updating CMC Data")
+        Coinmarketcap.update_coinmarketcap_data()
+        return time.time()
+    else:
+        return last_time_updated_cmc
+
+def update_ssf(last_time_updated_ss):
+    if not last_time_updated_ss or (time.time() - last_time_updated_ss) > 1800:
+        print ("Updating Shapeshift Fees")
+        Shapeshift.update_shapeshift_fees()
+        return time.time()
+    else:
+        return last_time_updated_ss
 
 def create_database():
     db = MySQLdb.connect(host="localhost", user="root", passwd="Sebis2017")
@@ -147,7 +163,57 @@ def get_last_transactions(previous_exchanges):
     return {"new_exchanges": filtered_new_exchanges, "duration": duration}
 
 
+#Etherchain
 def get_ethereum_transaction(new_exchanges):
+    # Take ETH exchanges only
+    filtered_new__exchanges = [exchange for exchange in new_exchanges if "ETH" == exchange["curIn"]]
+    if filtered_new__exchanges:
+        # Request last block number
+        #last_block_number = int(requests.get("https://api.infura.io/v1/jsonrpc/mainnet/eth_blockNumber?token=Wh9YuEIhi7tqseXn8550").json()["result"], 16)
+        last_block_number = requests.get("https://etherchain.org/api/blocks/count").json()["data"][0]["count"]
+        for number in range(60):
+            # Get Block
+            # print (str(last_block_number - number))
+            with Controller.from_port(port = 9051) as controller:
+                controller.authenticate()
+                controller.signal(Signal.NEWNYM)
+            transactions = requests.get("https://etherchain.org/api/block/" + (str(last_block_number - number - 4)) + "/tx").json()["data"]
+
+            if transactions:
+                # Check if Block much older than Exchanges
+                time_oldest_transaction = datetime.datetime.utcfromtimestamp(filtered_new__exchanges[-1]["timestamp"])
+                time_block = datetime.datetime.strptime(transactions[0]["time"].replace("T","")[:-5],"%Y-%m-%d%H:%M:%S")
+                if ((time_oldest_transaction - time_block)).total_seconds() > 180:
+                    return
+
+                for transaction in transactions:
+                    for exchange in filtered_new__exchanges:
+                        time_exchange = datetime.datetime.utcfromtimestamp(exchange["timestamp"])
+                        # BC1 Tx must happen before SS Tx (SS Tx Time is when money recieved)
+                        if exchange["amount"] == transaction["amount"]/1E+18 and ((time_exchange - time_block)).total_seconds() > 0:
+                            # Change Ip Address
+                            with Controller.from_port(port = 9051) as controller:
+                                controller.authenticate()
+                                controller.signal(Signal.NEWNYM)
+                            exchange_details = requests.get(
+                                "https://shapeshift.io/txStat/" + transaction["to"]).json()
+                            if exchange_details["status"] == "complete" and exchange_details["outgoingType"] == exchange[
+                                "curOut"]:
+                                # Update DB
+                                cur.execute(
+                                    "UPDATE exchanges SET amount_to=%s, fee_from=%s, address_from=%s, address_to=%s, hash_from=%s, hash_to=%s, time_from=%s WHERE id=%s",
+                                    (exchange_details["outgoingCoin"],(transaction["gasUsed"]*(transaction["price"]/ 1E+18)),exchange_details["address"],exchange_details["withdraw"],transaction["hash"],exchange_details["transaction"],transaction["time"].replace("T","")[:-5],exchange["id"]))
+                                db.commit()
+                                search_corresponding_transaction(exchange_details["outgoingType"], exchange_details["transaction"], exchange["id"])
+                                filtered_new__exchanges.remove(exchange)
+                                # Quit search if no more new exchanges
+                                if not filtered_new__exchanges:
+                                    return
+                                # Search in next transaction
+                                break
+
+#Infura
+def get_ethereum_transaction_infura(new_exchanges):
     # Take ETH exchanges only
     filtered_new__exchanges = [exchange for exchange in new_exchanges if "ETH" == exchange["curIn"]]
     if filtered_new__exchanges:
@@ -230,7 +296,7 @@ def get_bitcoin_transaction(new_exchanges):
                             time_exchange = datetime.datetime.utcfromtimestamp(exchange["timestamp"])
                             time_transaction = datetime.datetime.utcfromtimestamp(transaction["time"])
                             # BC1 Tx must happen before SS Tx (SS Tx Time is when money recieved)
-                            if exchange["amount"]*100000000 == out["value"] and ((time_exchange - time_transaction)).total_seconds() > -600:
+                            if exchange["amount"]*100000000 == out["value"] and ((time_exchange - time_transaction)).total_seconds() > -500:
                                 # Change Ip Address
                                 with Controller.from_port(port = 9051) as controller:
                                     controller.authenticate()
