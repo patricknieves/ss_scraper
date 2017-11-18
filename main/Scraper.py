@@ -155,6 +155,9 @@ def get_ethereum_transaction(new_exchanges):
         for number in range(60):
             # Get Block
             # print (str(last_block_number - number))
+            with Controller.from_port(port = 9051) as controller:
+                controller.authenticate()
+                controller.signal(Signal.NEWNYM)
             block = requests.get("https://api.infura.io/v1/jsonrpc/mainnet/eth_getBlockByNumber?params=%5B%22" + hex(last_block_number - number) + "%22%2C%20true%5D&token=Wh9YuEIhi7tqseXn8550").json()["result"]
             transactions = block["transactions"]
             if transactions:
@@ -196,9 +199,12 @@ def get_bitcoin_transaction(new_exchanges):
     if filtered_new__exchanges:
         # Request last block number
         last_block_number = requests.get("https://blockchain.info/de/latestblock").json()["height"]
-        for number in range(4):
+        for number in range(5):
             # Get Block
             # print (str(last_block_number - number))
+            with Controller.from_port(port = 9051) as controller:
+                controller.authenticate()
+                controller.signal(Signal.NEWNYM)
             block = requests.get("https://blockchain.info/de/block-height/" + (str(last_block_number - number)) + "?format=json").json()["blocks"][0]
             transactions = block["tx"]
             if transactions:
@@ -252,14 +258,14 @@ def get_litecoin_transaction(new_exchanges):
     if filtered_new__exchanges:
         # Request last block number
         last_block_number = requests.get("https://chain.so/api/v2/get_info/LTC").json()["data"]["blocks"]
-        for number in range(29):
+        for number in range(40):
+            # Get Block
+            #print (str(last_block_number - number))
             # Change IP Address after 10 Txs (API Limit)
             #if (number%10 == 9):
             with Controller.from_port(port = 9051) as controller:
                 controller.authenticate()
                 controller.signal(Signal.NEWNYM)
-            # Get Block
-            #print (str(last_block_number - number))
             block = requests.get("https://chain.so/api/v2/block/LTC/" + (str(last_block_number - number))).json()["data"]
             transactions = block["txs"]
             if transactions:
