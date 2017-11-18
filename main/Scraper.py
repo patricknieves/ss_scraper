@@ -9,6 +9,7 @@ import Shapeshift
 import atexit
 from stem import Signal
 from stem.control import Controller
+import sys
 
 def main():
     # Create MySQL Tables
@@ -158,7 +159,13 @@ def get_ethereum_transaction(new_exchanges):
             with Controller.from_port(port = 9051) as controller:
                 controller.authenticate()
                 controller.signal(Signal.NEWNYM)
-            block = requests.get("https://api.infura.io/v1/jsonrpc/mainnet/eth_getBlockByNumber?params=%5B%22" + hex(last_block_number - number) + "%22%2C%20true%5D&token=Wh9YuEIhi7tqseXn8550").json()["result"]
+            try:
+                block = requests.get("https://api.infura.io/v1/jsonrpc/mainnet/eth_getBlockByNumber?params=%5B%22" + hex(last_block_number - number) + "%22%2C%20true%5D&token=Wh9YuEIhi7tqseXn8550").json()["result"]
+            except:
+                print ("Failed at Blocknumber: " + str(last_block_number - number))
+                print ("Failed at Blocknumber Hex: " + hex(last_block_number - number))
+                print("Unexpected error:", sys.exc_info()[0])
+                sys.exit(0)
             transactions = block["transactions"]
             if transactions:
                 # Check if Block much older than Exchanges
