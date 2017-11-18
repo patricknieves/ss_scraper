@@ -132,11 +132,11 @@ def get_last_transactions(previous_exchanges):
     for exchange in reversed(filtered_new_exchanges):
         try:
             #Get corresponding Shapeshift Fee and Coinmarketcap data
-            cur.execute("SELECT fee FROM shapeshift WHERE symbol = %s", exchange["curOut"])
+            cur.execute("SELECT fee FROM shapeshift WHERE symbol = %s", [exchange["curOut"]])
             fee_exchange = cur.fetchone()[0]
-            cur.execute("SELECT value FROM coinmarketcap WHERE symbol = %s", exchange["curIn"])
+            cur.execute("SELECT value FROM coinmarketcap WHERE symbol = %s", [exchange["curIn"]])
             dollarvalue_from = cur.fetchone()[0]
-            cur.execute("SELECT value FROM coinmarketcap WHERE symbol = %s", exchange["curOut"])
+            cur.execute("SELECT value FROM coinmarketcap WHERE symbol = %s", [exchange["curOut"]])
             dollarvalue_to = cur.fetchone()[0]
             cur.execute(
                 "INSERT INTO exchanges (currency_from, currency_to, amount_from, time_exchange, fee_exchange, dollarvalue_from, dollarvalue_to) VALUES (%s, %s, %s, %s, %s, %s, %s)",
