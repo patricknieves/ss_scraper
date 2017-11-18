@@ -5,14 +5,14 @@ import mysql.connector
 
 def create_table():
     #db = mysql.connector.connect(user="scraper@scraper-master", password="Sebis2017", host="scraper-master.mysql.database.azure.com", port="3306", database="scraper")
-    db = MySQLdb.connect(host="localhost", user="root", passwd="admin", db="scraper")
+    db = MySQLdb.connect(host="localhost", user="root", passwd="Sebis2017", db="scraper")
     cur = db.cursor()
     cur.execute("CREATE TABLE IF NOT EXISTS shapeshift (symbol varchar(45) NOT NULL, fee double DEFAULT NULL, PRIMARY KEY (symbol))")
     db.close()
 
 def update_shapeshift_fees():
     #db = mysql.connector.connect(user="scraper@scraper-master", password="Sebis2017", host="scraper-master.mysql.database.azure.com", port="3306", database="scraper")
-    db = MySQLdb.connect(host="localhost", user="root", passwd="admin", db="scraper")
+    db = MySQLdb.connect(host="localhost", user="root", passwd="Sebis2017", db="scraper")
     cur = db.cursor()
 
     # Delete old values

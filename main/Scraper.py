@@ -66,7 +66,7 @@ def main():
 
 def create_database():
     #db = mysql.connector.connect(user="scraper@scraper-master", password="Sebis2017", host="scraper-master.mysql.database.azure.com", port="3306")
-    db = MySQLdb.connect(host="localhost", user="root", passwd="admin")
+    db = MySQLdb.connect(host="localhost", user="root", passwd="Sebis2017")
     cur = db.cursor()
     cur.execute("CREATE DATABASE IF NOT EXISTS scraper")
     db.close()
@@ -314,7 +314,7 @@ def closeConnection():
 # Create MySQL Database and connect
 create_database()
 #db = mysql.connector.connect(user="scraper@scraper-master", password="Sebis2017", host="scraper-master.mysql.database.azure.com", port="3306", database="scraper")
-db = MySQLdb.connect(host="localhost", user="root", passwd="admin", db="scraper")
+db = MySQLdb.connect(host="localhost", user="root", passwd="Sebis2017", db="scraper")
 cur = db.cursor()
 atexit.register(closeConnection)
 
