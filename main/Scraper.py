@@ -9,8 +9,6 @@ import Shapeshift
 import atexit
 from stem import Signal
 from stem.control import Controller
-import mysql
-import mysql.connector
 
 def main():
     # Create MySQL Tables
@@ -26,28 +24,30 @@ def main():
     delete_all_data()
 
     while True:
-        # Update Coinmarketcap data every 10 min
-        if not last_time_updated_cmc or (time.time() - last_time_updated_cmc) > 600:
-            print ("Updating CMC Data")
-            with Controller.from_port(port = 9051) as controller:
-                controller.authenticate()
-                controller.signal(Signal.NEWNYM)
-            Coinmarketcap.update_coinmarketcap_data()
-            last_time_updated_cmc = time.time()
-        # Update Shapeshift fees every 30 min
-        if not last_time_updated_ss or (time.time() - last_time_updated_ss) > 1800:
-            print ("Updating Shapeshift Fees")
-            Shapeshift.update_shapeshift_fees()
-            last_time_updated_ss = time.time()
-
         result = get_last_transactions(previous_exchanges)
         new_exchanges = result["new_exchanges"]
         # After every loop: Wait the half of the duration of retrieved 50 Txs
         duration_to_wait = result["duration"].total_seconds()/2
         if new_exchanges:
-            previous_exchanges = new_exchanges
             print ("Starting loop: " + str(datetime.datetime.now()))
             start_time = time.time()
+
+            # Update Coinmarketcap data every 10 min
+            if not last_time_updated_cmc or (time.time() - last_time_updated_cmc) > 600:
+                print ("Updating CMC Data")
+                with Controller.from_port(port = 9051) as controller:
+                    controller.authenticate()
+                    controller.signal(Signal.NEWNYM)
+                Coinmarketcap.update_coinmarketcap_data()
+                last_time_updated_cmc = time.time()
+            # Update Shapeshift fees every 30 min
+            if not last_time_updated_ss or (time.time() - last_time_updated_ss) > 1800:
+                print ("Updating Shapeshift Fees")
+                Shapeshift.update_shapeshift_fees()
+                last_time_updated_ss = time.time()
+
+            previous_exchanges = new_exchanges
+
             print ("Search for Ethereum Txs...")
             get_ethereum_transaction(new_exchanges)
             print ("Search for Litecoin Txs...")
@@ -65,7 +65,6 @@ def main():
             time.sleep(duration_to_wait)
 
 def create_database():
-    #db = mysql.connector.connect(user="scraper@scraper-master", password="Sebis2017", host="scraper-master.mysql.database.azure.com", port="3306")
     db = MySQLdb.connect(host="localhost", user="root", passwd="Sebis2017")
     cur = db.cursor()
     cur.execute("CREATE DATABASE IF NOT EXISTS scraper")
@@ -313,7 +312,6 @@ def closeConnection():
 
 # Create MySQL Database and connect
 create_database()
-#db = mysql.connector.connect(user="scraper@scraper-master", password="Sebis2017", host="scraper-master.mysql.database.azure.com", port="3306", database="scraper")
 db = MySQLdb.connect(host="localhost", user="root", passwd="Sebis2017", db="scraper")
 cur = db.cursor()
 atexit.register(closeConnection)
