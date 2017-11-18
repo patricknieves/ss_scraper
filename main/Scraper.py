@@ -35,9 +35,6 @@ def main():
             # Update Coinmarketcap data every 10 min
             if not last_time_updated_cmc or (time.time() - last_time_updated_cmc) > 600:
                 print ("Updating CMC Data")
-                with Controller.from_port(port = 9051) as controller:
-                    controller.authenticate()
-                    controller.signal(Signal.NEWNYM)
                 Coinmarketcap.update_coinmarketcap_data()
                 last_time_updated_cmc = time.time()
             # Update Shapeshift fees every 30 min
@@ -172,6 +169,10 @@ def get_ethereum_transaction(new_exchanges):
                         time_exchange = datetime.datetime.utcfromtimestamp(exchange["timestamp"])
                         # BC1 Tx must happen before SS Tx (SS Tx Time is when money recieved)
                         if exchange["amount"] == int(transaction["value"], 16) / 1E+18 and ((time_exchange - time_block)).total_seconds() > 0:
+                            # Change Ip Address
+                            with Controller.from_port(port = 9051) as controller:
+                                controller.authenticate()
+                                controller.signal(Signal.NEWNYM)
                             exchange_details = requests.get(
                                 "https://shapeshift.io/txStat/" + transaction["to"]).json()
                             if exchange_details["status"] == "complete" and exchange_details["outgoingType"] == exchange[
@@ -215,6 +216,10 @@ def get_bitcoin_transaction(new_exchanges):
                             time_transaction = datetime.datetime.utcfromtimestamp(transaction["time"])
                             # BC1 Tx must happen before SS Tx (SS Tx Time is when money recieved)
                             if exchange["amount"]*100000000 == out["value"] and ((time_exchange - time_transaction)).total_seconds() > -300:
+                                # Change Ip Address
+                                with Controller.from_port(port = 9051) as controller:
+                                    controller.authenticate()
+                                    controller.signal(Signal.NEWNYM)
                                 exchange_details = requests.get(
                                     "https://shapeshift.io/txStat/" + out["addr"]).json()
                                 if exchange_details["status"] == "complete" and exchange_details["outgoingType"] == exchange[
@@ -270,6 +275,10 @@ def get_litecoin_transaction(new_exchanges):
                             time_exchange = datetime.datetime.utcfromtimestamp(exchange["timestamp"])
                             # BC1 Tx must happen before SS Tx (SS Tx Time is when money recieved)
                             if exchange["amount"] == float(out["value"]) and ((time_exchange - time_block)).total_seconds() > -300:
+                                # Change Ip Address
+                                with Controller.from_port(port = 9051) as controller:
+                                    controller.authenticate()
+                                    controller.signal(Signal.NEWNYM)
                                 exchange_details = requests.get(
                                     "https://shapeshift.io/txStat/" + out["address"]).json()
                                 if exchange_details["status"] == "complete" and exchange_details["outgoingType"] == exchange["curOut"]:
@@ -291,10 +300,6 @@ def get_litecoin_transaction(new_exchanges):
                                     break
 
 def search_corresponding_transaction(currency, tx_hash, exchange_id):
-    # Change Ip Address
-    with Controller.from_port(port = 9051) as controller:
-        controller.authenticate()
-        controller.signal(Signal.NEWNYM)
     if currency == "ETH":
         transaction = requests.get("https://api.infura.io/v1/jsonrpc/mainnet/eth_getTransactionByHash?params=%5B%22" + tx_hash + "%22%5D&token=Wh9YuEIhi7tqseXn8550").json()["result"]
         block = requests.get("https://api.infura.io/v1/jsonrpc/mainnet/eth_getBlockByNumber?params=%5B%22" + transaction["blockNumber"] + "%22%2C%20true%5D&token=Wh9YuEIhi7tqseXn8550").json()["result"]
