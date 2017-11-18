@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f62b2653-b562-4636-bf1d-62fa701dfeb5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/Shapeshift.py" afterPath="$PROJECT_DIR$/main/Shapeshift.py" />
     </list>
     <ignored path="Scraper.iws" />
@@ -49,7 +48,7 @@
       <file leaf-file-name="Coinmarketcap.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/Coinmarketcap.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
+            <state relative-caret-position="42">
               <caret line="17" column="23" lean-forward="true" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
@@ -65,10 +64,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Scraper.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Scraper.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/Scraper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4621">
+            <state relative-caret-position="4054">
               <caret line="305" column="27" lean-forward="true" selection-start-line="305" selection-start-column="27" selection-end-line="305" selection-end-column="27" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
@@ -105,21 +104,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Shapeshift.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Shapeshift.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/Shapeshift.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="31" column="16" lean-forward="true" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+            <state relative-caret-position="214">
+              <caret line="29" column="29" lean-forward="true" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
-                <marker date="1511022252395" expanded="true" signature="385:499" ph="CREATE TABLE... IF" />
-                <marker date="1511022252395" expanded="true" signature="385:501" ph="CREATE TABLE... shapeshift" />
-                <marker date="1511022252395" expanded="true" signature="1185:1621" ph="SELECT 1 FRO... shapeshift" />
-                <marker date="1511022252395" expanded="true" signature="1236:1274" ph="SELECT 1 FRO... shapeshift" />
-                <marker date="1511022252395" expanded="true" signature="1236:1277" ph="SELECT 1 FRO... shapeshift" />
-                <marker date="1511022252395" expanded="true" signature="1236:1286" ph="SELECT 1 FRO... shapeshift" />
-                <marker date="1511022252395" expanded="true" signature="1236:1300" ph="SELECT EXIST... " />
-                <marker date="1511022252395" expanded="true" signature="1402:1454" ph="INSERT INTO shapeshift... " />
+                <marker date="1511022641038" expanded="true" signature="385:499" ph="CREATE TABLE... IF" />
+                <marker date="1511022641038" expanded="true" signature="385:501" ph="CREATE TABLE... shapeshift" />
+                <marker date="1511022641038" expanded="true" signature="1185:1619" ph="SELECT 1 FRO... shapeshift" />
+                <marker date="1511022641038" expanded="true" signature="1236:1274" ph="SELECT 1 FRO... shapeshift" />
+                <marker date="1511022641038" expanded="true" signature="1236:1276" ph="SELECT 1 FRO... shapeshift" />
+                <marker date="1511022641038" expanded="true" signature="1236:1284" ph="SELECT 1 FRO... shapeshift" />
+                <marker date="1511022641038" expanded="true" signature="1236:1298" ph="SELECT EXIST... " />
+                <marker date="1511022641038" expanded="true" signature="1400:1452" ph="INSERT INTO shapeshift... " />
               </folding>
             </state>
           </provider>
@@ -994,12 +993,12 @@
       <workItem from="1510924031907" duration="898000" />
       <workItem from="1510999845321" duration="4744000" />
       <workItem from="1511007432400" duration="1397000" />
-      <workItem from="1511008856491" duration="10496000" />
+      <workItem from="1511008856491" duration="10904000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119432000" />
+    <option name="totallyTimeSpent" value="119840000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1090,14 +1089,14 @@
           <caret line="4" column="136" lean-forward="true" selection-start-line="4" selection-start-column="124" selection-end-line="4" selection-end-column="136" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1511022252395" expanded="true" signature="385:499" ph="CREATE TABLE... IF" />
-            <marker date="1511022252395" expanded="true" signature="385:501" ph="CREATE TABLE... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1185:1621" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1236:1274" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1236:1277" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1236:1286" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1236:1300" ph="SELECT EXIST... " />
-            <marker date="1511022252395" expanded="true" signature="1402:1454" ph="INSERT INTO shapeshift... " />
+            <marker date="1511022641038" expanded="true" signature="385:499" ph="CREATE TABLE... IF" />
+            <marker date="1511022641038" expanded="true" signature="385:501" ph="CREATE TABLE... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1185:1619" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1236:1274" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1236:1276" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1236:1284" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1236:1298" ph="SELECT EXIST... " />
+            <marker date="1511022641038" expanded="true" signature="1400:1452" ph="INSERT INTO shapeshift... " />
           </folding>
         </state>
       </provider>
@@ -1163,14 +1162,14 @@
           <caret line="7" column="14" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="7" selection-end-column="14" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1511022252395" expanded="true" signature="385:499" ph="CREATE TABLE... IF" />
-            <marker date="1511022252395" expanded="true" signature="385:501" ph="CREATE TABLE... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1185:1621" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1236:1274" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1236:1277" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1236:1286" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1236:1300" ph="SELECT EXIST... " />
-            <marker date="1511022252395" expanded="true" signature="1402:1454" ph="INSERT INTO shapeshift... " />
+            <marker date="1511022641038" expanded="true" signature="385:499" ph="CREATE TABLE... IF" />
+            <marker date="1511022641038" expanded="true" signature="385:501" ph="CREATE TABLE... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1185:1619" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1236:1274" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1236:1276" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1236:1284" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1236:1298" ph="SELECT EXIST... " />
+            <marker date="1511022641038" expanded="true" signature="1400:1452" ph="INSERT INTO shapeshift... " />
           </folding>
         </state>
       </provider>
@@ -1236,14 +1235,14 @@
           <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="14" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1511022252395" expanded="true" signature="385:499" ph="CREATE TABLE... IF" />
-            <marker date="1511022252395" expanded="true" signature="385:501" ph="CREATE TABLE... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1185:1621" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1236:1274" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1236:1277" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1236:1286" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1236:1300" ph="SELECT EXIST... " />
-            <marker date="1511022252395" expanded="true" signature="1402:1454" ph="INSERT INTO shapeshift... " />
+            <marker date="1511022641038" expanded="true" signature="385:499" ph="CREATE TABLE... IF" />
+            <marker date="1511022641038" expanded="true" signature="385:501" ph="CREATE TABLE... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1185:1619" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1236:1274" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1236:1276" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1236:1284" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1236:1298" ph="SELECT EXIST... " />
+            <marker date="1511022641038" expanded="true" signature="1400:1452" ph="INSERT INTO shapeshift... " />
           </folding>
         </state>
       </provider>
@@ -1309,14 +1308,14 @@
           <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="14" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1511022252395" expanded="true" signature="385:499" ph="CREATE TABLE... IF" />
-            <marker date="1511022252395" expanded="true" signature="385:501" ph="CREATE TABLE... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1185:1621" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1236:1274" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1236:1277" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1236:1286" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1236:1300" ph="SELECT EXIST... " />
-            <marker date="1511022252395" expanded="true" signature="1402:1454" ph="INSERT INTO shapeshift... " />
+            <marker date="1511022641038" expanded="true" signature="385:499" ph="CREATE TABLE... IF" />
+            <marker date="1511022641038" expanded="true" signature="385:501" ph="CREATE TABLE... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1185:1619" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1236:1274" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1236:1276" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1236:1284" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1236:1298" ph="SELECT EXIST... " />
+            <marker date="1511022641038" expanded="true" signature="1400:1452" ph="INSERT INTO shapeshift... " />
           </folding>
         </state>
       </provider>
@@ -1382,14 +1381,14 @@
           <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1511022252395" expanded="true" signature="385:499" ph="CREATE TABLE... IF" />
-            <marker date="1511022252395" expanded="true" signature="385:501" ph="CREATE TABLE... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1185:1621" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1236:1274" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1236:1277" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1236:1286" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1236:1300" ph="SELECT EXIST... " />
-            <marker date="1511022252395" expanded="true" signature="1402:1454" ph="INSERT INTO shapeshift... " />
+            <marker date="1511022641038" expanded="true" signature="385:499" ph="CREATE TABLE... IF" />
+            <marker date="1511022641038" expanded="true" signature="385:501" ph="CREATE TABLE... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1185:1619" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1236:1274" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1236:1276" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1236:1284" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1236:1298" ph="SELECT EXIST... " />
+            <marker date="1511022641038" expanded="true" signature="1400:1452" ph="INSERT INTO shapeshift... " />
           </folding>
         </state>
       </provider>
@@ -1438,14 +1437,14 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1511022252395" expanded="true" signature="385:499" ph="CREATE TABLE... IF" />
-            <marker date="1511022252395" expanded="true" signature="385:501" ph="CREATE TABLE... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1185:1621" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1236:1274" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1236:1277" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1236:1286" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1236:1300" ph="SELECT EXIST... " />
-            <marker date="1511022252395" expanded="true" signature="1402:1454" ph="INSERT INTO shapeshift... " />
+            <marker date="1511022641038" expanded="true" signature="385:499" ph="CREATE TABLE... IF" />
+            <marker date="1511022641038" expanded="true" signature="385:501" ph="CREATE TABLE... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1185:1619" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1236:1274" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1236:1276" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1236:1284" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1236:1298" ph="SELECT EXIST... " />
+            <marker date="1511022641038" expanded="true" signature="1400:1452" ph="INSERT INTO shapeshift... " />
           </folding>
         </state>
       </provider>
@@ -1456,14 +1455,14 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1511022252395" expanded="true" signature="385:499" ph="CREATE TABLE... IF" />
-            <marker date="1511022252395" expanded="true" signature="385:501" ph="CREATE TABLE... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1185:1621" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1236:1274" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1236:1277" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1236:1286" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1236:1300" ph="SELECT EXIST... " />
-            <marker date="1511022252395" expanded="true" signature="1402:1454" ph="INSERT INTO shapeshift... " />
+            <marker date="1511022641038" expanded="true" signature="385:499" ph="CREATE TABLE... IF" />
+            <marker date="1511022641038" expanded="true" signature="385:501" ph="CREATE TABLE... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1185:1619" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1236:1274" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1236:1276" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1236:1284" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1236:1298" ph="SELECT EXIST... " />
+            <marker date="1511022641038" expanded="true" signature="1400:1452" ph="INSERT INTO shapeshift... " />
           </folding>
         </state>
       </provider>
@@ -1474,14 +1473,14 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1511022252395" expanded="true" signature="385:499" ph="CREATE TABLE... IF" />
-            <marker date="1511022252395" expanded="true" signature="385:501" ph="CREATE TABLE... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1185:1621" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1236:1274" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1236:1277" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1236:1286" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1236:1300" ph="SELECT EXIST... " />
-            <marker date="1511022252395" expanded="true" signature="1402:1454" ph="INSERT INTO shapeshift... " />
+            <marker date="1511022641038" expanded="true" signature="385:499" ph="CREATE TABLE... IF" />
+            <marker date="1511022641038" expanded="true" signature="385:501" ph="CREATE TABLE... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1185:1619" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1236:1274" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1236:1276" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1236:1284" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1236:1298" ph="SELECT EXIST... " />
+            <marker date="1511022641038" expanded="true" signature="1400:1452" ph="INSERT INTO shapeshift... " />
           </folding>
         </state>
       </provider>
@@ -1492,14 +1491,14 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1511022252395" expanded="true" signature="385:499" ph="CREATE TABLE... IF" />
-            <marker date="1511022252395" expanded="true" signature="385:501" ph="CREATE TABLE... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1185:1621" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1236:1274" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1236:1277" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1236:1286" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1236:1300" ph="SELECT EXIST... " />
-            <marker date="1511022252395" expanded="true" signature="1402:1454" ph="INSERT INTO shapeshift... " />
+            <marker date="1511022641038" expanded="true" signature="385:499" ph="CREATE TABLE... IF" />
+            <marker date="1511022641038" expanded="true" signature="385:501" ph="CREATE TABLE... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1185:1619" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1236:1274" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1236:1276" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1236:1284" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1236:1298" ph="SELECT EXIST... " />
+            <marker date="1511022641038" expanded="true" signature="1400:1452" ph="INSERT INTO shapeshift... " />
           </folding>
         </state>
       </provider>
@@ -1579,7 +1578,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main/Coinmarketcap.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
+        <state relative-caret-position="42">
           <caret line="17" column="23" lean-forward="true" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
@@ -1594,9 +1593,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main/Shapeshift.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="29" column="29" lean-forward="true" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <marker date="1511022641038" expanded="true" signature="385:499" ph="CREATE TABLE... IF" />
+            <marker date="1511022641038" expanded="true" signature="385:501" ph="CREATE TABLE... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1185:1619" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1236:1274" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1236:1276" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1236:1284" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511022641038" expanded="true" signature="1236:1298" ph="SELECT EXIST... " />
+            <marker date="1511022641038" expanded="true" signature="1400:1452" ph="INSERT INTO shapeshift... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main/Scraper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4621">
+        <state relative-caret-position="4054">
           <caret line="305" column="27" lean-forward="true" selection-start-line="305" selection-start-column="27" selection-end-line="305" selection-end-column="27" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
@@ -1628,24 +1645,6 @@
             <marker date="1511022207684" expanded="true" signature="18163:18224" ph="UPDATE excha... " />
             <marker date="1511022207684" expanded="true" signature="18474:18533" ph="UPDATE excha... " />
             <marker date="1511022207684" expanded="true" signature="18474:18535" ph="UPDATE excha... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/Shapeshift.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="31" column="16" lean-forward="true" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-            <marker date="1511022252395" expanded="true" signature="385:499" ph="CREATE TABLE... IF" />
-            <marker date="1511022252395" expanded="true" signature="385:501" ph="CREATE TABLE... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1185:1621" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1236:1274" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1236:1277" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1236:1286" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511022252395" expanded="true" signature="1236:1300" ph="SELECT EXIST... " />
-            <marker date="1511022252395" expanded="true" signature="1402:1454" ph="INSERT INTO shapeshift... " />
           </folding>
         </state>
       </provider>

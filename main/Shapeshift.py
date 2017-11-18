@@ -26,7 +26,7 @@ def update_shapeshift_fees():
     for exchange in shapeshift_data:
         currency = exchange["pair"].split('_')[1]
         #if currency in arr:
-        cur.execute("SELECT 1 FROM shapeshift WHERE symbol='%s' LIMIT 1", (currency))
+        cur.execute("SELECT 1 FROM shapeshift WHERE symbol=%s LIMIT 1", [currency])
         data = cur.fetchone()
         if data is None:
             try:
