@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f62b2653-b562-4636-bf1d-62fa701dfeb5" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/Coinmarketcap.py" afterPath="$PROJECT_DIR$/main/Coinmarketcap.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/Scraper.py" afterPath="$PROJECT_DIR$/main/Scraper.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/Shapeshift.py" afterPath="$PROJECT_DIR$/main/Shapeshift.py" />
     </list>
     <ignored path="Scraper.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,17 +50,17 @@
       <file leaf-file-name="Coinmarketcap.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/Coinmarketcap.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+            <state relative-caret-position="609">
+              <caret line="29" column="33" lean-forward="false" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
-                <marker date="1511025393283" expanded="true" signature="217:287" ph="CREATE TABLE... coinmarketcap" />
-                <marker date="1511025393283" expanded="true" signature="217:318" ph="CREATE TABLE... coinmarketcap" />
-                <marker date="1511025393283" expanded="true" signature="217:345" ph="CREATE TABLE... coinmarketcap" />
-                <marker date="1511025393283" expanded="true" signature="217:366" ph="CREATE TABLE... coinmarketcap" />
-                <marker date="1511025393283" expanded="true" signature="217:367" ph="CREATE TABLE... IF" />
-                <marker date="1511025393283" expanded="true" signature="217:369" ph="CREATE TABLE... coinmarketcap" />
-                <marker date="1511025393283" expanded="true" signature="948:1015" ph="INSERT INTO coinmarketcap... " />
+                <marker date="1511108756942" expanded="true" signature="198:268" ph="CREATE TABLE... coinmarketcap" />
+                <marker date="1511108756942" expanded="true" signature="198:299" ph="CREATE TABLE... coinmarketcap" />
+                <marker date="1511108756942" expanded="true" signature="198:326" ph="CREATE TABLE... coinmarketcap" />
+                <marker date="1511108756942" expanded="true" signature="198:347" ph="CREATE TABLE... coinmarketcap" />
+                <marker date="1511108756942" expanded="true" signature="198:348" ph="CREATE TABLE... IF" />
+                <marker date="1511108756942" expanded="true" signature="198:350" ph="CREATE TABLE... coinmarketcap" />
+                <marker date="1511108756942" expanded="true" signature="929:996" ph="INSERT INTO coinmarketcap... " />
               </folding>
             </state>
           </provider>
@@ -67,39 +69,38 @@
       <file leaf-file-name="Scraper.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/Scraper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="204" column="268" lean-forward="false" selection-start-line="204" selection-start-column="268" selection-end-line="204" selection-end-column="268" />
+            <state relative-caret-position="534">
+              <caret line="448" column="47" lean-forward="true" selection-start-line="448" selection-start-column="47" selection-end-line="448" selection-end-column="47" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
-                <marker date="1511050164577" expanded="true" signature="2922:3346" ph="CREATE TABLE... exchanges" />
-                <marker date="1511050164577" expanded="true" signature="2922:3401" ph="CREATE TABLE... exchanges" />
-                <marker date="1511050164577" expanded="true" signature="2922:3463" ph="CREATE TABLE... exchanges" />
-                <marker date="1511050164577" expanded="true" signature="2922:3523" ph="CREATE TABLE... exchanges" />
-                <marker date="1511050164577" expanded="true" signature="2922:3582" ph="CREATE TABLE... exchanges" />
-                <marker date="1511050164577" expanded="true" signature="2922:3639" ph="CREATE TABLE... exchanges" />
-                <marker date="1511050164577" expanded="true" signature="2922:3694" ph="CREATE TABLE... exchanges" />
-                <marker date="1511050164577" expanded="true" signature="2922:3747" ph="CREATE TABLE... exchanges" />
-                <marker date="1511050164577" expanded="true" signature="2922:3806" ph="CREATE TABLE... exchanges" />
-                <marker date="1511050164577" expanded="true" signature="2922:3865" ph="CREATE TABLE... exchanges" />
-                <marker date="1511050164577" expanded="true" signature="2922:3922" ph="CREATE TABLE... exchanges" />
-                <marker date="1511050164577" expanded="true" signature="2922:3961" ph="CREATE TABLE... exchanges" />
-                <marker date="1511050164577" expanded="true" signature="2922:3962" ph="CREATE TABLE... IF" />
-                <marker date="1511050164577" expanded="true" signature="5943:5985" ph="SELECT fee F... shapeshift" />
-                <marker date="1511050164577" expanded="true" signature="5943:5987" ph="SELECT fee F... shapeshift" />
-                <marker date="1511050164577" expanded="true" signature="6082:6131" ph="SELECT value... coinmarketcap" />
-                <marker date="1511050164577" expanded="true" signature="6229:6278" ph="SELECT value... coinmarketcap" />
-                <marker date="1511050164577" expanded="true" signature="6392:6554" ph="INSERT INTO exchanges... " />
-                <marker date="1511050164577" expanded="true" signature="9484:9614" ph="UPDATE excha... " />
-                <marker date="1511050164577" expanded="true" signature="13383:13527" ph="UPDATE excha... " />
-                <marker date="1511050164577" expanded="true" signature="13383:13529" ph="UPDATE excha... " />
-                <marker date="1511050164577" expanded="true" signature="17547:17692" ph="UPDATE excha... " />
-                <marker date="1511050164577" expanded="true" signature="17547:17694" ph="UPDATE excha... " />
-                <marker date="1511050164577" expanded="true" signature="21165:21310" ph="UPDATE excha... " />
-                <marker date="1511050164577" expanded="true" signature="21165:21312" ph="UPDATE excha... " />
-                <marker date="1511050164577" expanded="true" signature="22769:22830" ph="UPDATE excha... " />
-                <marker date="1511050164577" expanded="true" signature="23164:23225" ph="UPDATE excha... " />
-                <marker date="1511050164577" expanded="true" signature="23475:23534" ph="UPDATE excha... " />
-                <marker date="1511050164577" expanded="true" signature="23475:23536" ph="UPDATE excha... " />
+                <marker date="1511108759071" expanded="true" signature="2939:3363" ph="CREATE TABLE... exchanges" />
+                <marker date="1511108759071" expanded="true" signature="2939:3418" ph="CREATE TABLE... exchanges" />
+                <marker date="1511108759071" expanded="true" signature="2939:3480" ph="CREATE TABLE... exchanges" />
+                <marker date="1511108759071" expanded="true" signature="2939:3540" ph="CREATE TABLE... exchanges" />
+                <marker date="1511108759071" expanded="true" signature="2939:3599" ph="CREATE TABLE... exchanges" />
+                <marker date="1511108759071" expanded="true" signature="2939:3656" ph="CREATE TABLE... exchanges" />
+                <marker date="1511108759071" expanded="true" signature="2939:3711" ph="CREATE TABLE... exchanges" />
+                <marker date="1511108759071" expanded="true" signature="2939:3764" ph="CREATE TABLE... exchanges" />
+                <marker date="1511108759071" expanded="true" signature="2939:3823" ph="CREATE TABLE... exchanges" />
+                <marker date="1511108759071" expanded="true" signature="2939:3882" ph="CREATE TABLE... exchanges" />
+                <marker date="1511108759071" expanded="true" signature="2939:3939" ph="CREATE TABLE... exchanges" />
+                <marker date="1511108759071" expanded="true" signature="2939:3978" ph="CREATE TABLE... exchanges" />
+                <marker date="1511108759071" expanded="true" signature="2939:3979" ph="CREATE TABLE... IF" />
+                <marker date="1511108759071" expanded="true" signature="5960:6002" ph="SELECT fee F... shapeshift" />
+                <marker date="1511108759071" expanded="true" signature="5960:6004" ph="SELECT fee F... shapeshift" />
+                <marker date="1511108759071" expanded="true" signature="6099:6148" ph="SELECT value... coinmarketcap" />
+                <marker date="1511108759071" expanded="true" signature="6246:6295" ph="SELECT value... coinmarketcap" />
+                <marker date="1511108759071" expanded="true" signature="6409:6571" ph="INSERT INTO exchanges... " />
+                <marker date="1511108759071" expanded="true" signature="10055:10185" ph="UPDATE excha... " />
+                <marker date="1511108759071" expanded="true" signature="15158:15303" ph="UPDATE excha... " />
+                <marker date="1511108759071" expanded="true" signature="15158:15305" ph="UPDATE excha... " />
+                <marker date="1511108759071" expanded="true" signature="19345:19490" ph="UPDATE excha... " />
+                <marker date="1511108759071" expanded="true" signature="19345:19492" ph="UPDATE excha... " />
+                <marker date="1511108759071" expanded="true" signature="21192:21253" ph="UPDATE excha... " />
+                <marker date="1511108759071" expanded="true" signature="21599:21660" ph="UPDATE excha... " />
+                <marker date="1511108759071" expanded="true" signature="21922:21981" ph="UPDATE excha... " />
+                <marker date="1511108759071" expanded="true" signature="21922:21983" ph="UPDATE excha... " />
+                <marker date="1511108759071" expanded="true" signature="25469:25615" ph="UPDATE excha... " />
               </folding>
             </state>
           </provider>
@@ -108,14 +109,14 @@
       <file leaf-file-name="Shapeshift.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/Shapeshift.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+            <state relative-caret-position="42">
+              <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
-                <marker date="1511025379577" expanded="true" signature="217:331" ph="CREATE TABLE... IF" />
-                <marker date="1511025379577" expanded="true" signature="217:333" ph="CREATE TABLE... shapeshift" />
-                <marker date="1511025379577" expanded="true" signature="900:948" ph="SELECT 1 FRO... shapeshift" />
-                <marker date="1511025379577" expanded="true" signature="1064:1116" ph="INSERT INTO shapeshift... " />
+                <marker date="1511108756956" expanded="true" signature="198:312" ph="CREATE TABLE... IF" />
+                <marker date="1511108756956" expanded="true" signature="198:314" ph="CREATE TABLE... shapeshift" />
+                <marker date="1511108756956" expanded="true" signature="881:929" ph="SELECT 1 FRO... shapeshift" />
+                <marker date="1511108756956" expanded="true" signature="1045:1097" ph="INSERT INTO shapeshift... " />
               </folding>
             </state>
           </provider>
@@ -176,10 +177,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1743" />
-    <option name="y" value="-30" />
-    <option name="width" value="1550" />
-    <option name="height" value="874" />
+    <option name="x" value="2278" />
+    <option name="y" value="-11" />
+    <option name="width" value="1240" />
+    <option name="height" value="699" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -996,12 +997,12 @@
       <workItem from="1511008856491" duration="13077000" />
       <workItem from="1511036496923" duration="1010000" />
       <workItem from="1511040429288" duration="52000" />
-      <workItem from="1511041466255" duration="5253000" />
+      <workItem from="1511041466255" duration="9843000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128328000" />
+    <option name="totallyTimeSpent" value="132918000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1075,13 +1076,13 @@
           <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1511025393283" expanded="true" signature="217:287" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="217:318" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="217:345" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="217:366" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="217:367" ph="CREATE TABLE... IF" />
-            <marker date="1511025393283" expanded="true" signature="217:369" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="948:1015" ph="INSERT INTO coinmarketcap... " />
+            <marker date="1511108756942" expanded="true" signature="198:268" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="198:299" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="198:326" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="198:347" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="198:348" ph="CREATE TABLE... IF" />
+            <marker date="1511108756942" expanded="true" signature="198:350" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="929:996" ph="INSERT INTO coinmarketcap... " />
           </folding>
         </state>
       </provider>
@@ -1092,10 +1093,10 @@
           <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1511025379577" expanded="true" signature="217:331" ph="CREATE TABLE... IF" />
-            <marker date="1511025379577" expanded="true" signature="217:333" ph="CREATE TABLE... shapeshift" />
-            <marker date="1511025379577" expanded="true" signature="900:948" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511025379577" expanded="true" signature="1064:1116" ph="INSERT INTO shapeshift... " />
+            <marker date="1511108756956" expanded="true" signature="198:312" ph="CREATE TABLE... IF" />
+            <marker date="1511108756956" expanded="true" signature="198:314" ph="CREATE TABLE... shapeshift" />
+            <marker date="1511108756956" expanded="true" signature="881:929" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511108756956" expanded="true" signature="1045:1097" ph="INSERT INTO shapeshift... " />
           </folding>
         </state>
       </provider>
@@ -1106,35 +1107,34 @@
           <caret line="223" column="137" lean-forward="false" selection-start-line="223" selection-start-column="137" selection-end-line="223" selection-end-column="137" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
-            <marker date="1511050164577" expanded="true" signature="2922:3346" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3401" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3463" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3523" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3582" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3639" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3694" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3747" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3806" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3865" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3922" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3961" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3962" ph="CREATE TABLE... IF" />
-            <marker date="1511050164577" expanded="true" signature="5943:5985" ph="SELECT fee F... shapeshift" />
-            <marker date="1511050164577" expanded="true" signature="5943:5987" ph="SELECT fee F... shapeshift" />
-            <marker date="1511050164577" expanded="true" signature="6082:6131" ph="SELECT value... coinmarketcap" />
-            <marker date="1511050164577" expanded="true" signature="6229:6278" ph="SELECT value... coinmarketcap" />
-            <marker date="1511050164577" expanded="true" signature="6392:6554" ph="INSERT INTO exchanges... " />
-            <marker date="1511050164577" expanded="true" signature="9484:9614" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="13383:13527" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="13383:13529" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="17547:17692" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="17547:17694" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="21165:21310" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="21165:21312" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="22769:22830" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="23164:23225" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="23475:23534" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="23475:23536" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="2939:3363" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3418" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3480" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3540" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3599" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3656" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3711" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3764" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3823" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3882" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3939" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3978" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3979" ph="CREATE TABLE... IF" />
+            <marker date="1511108759071" expanded="true" signature="5960:6002" ph="SELECT fee F... shapeshift" />
+            <marker date="1511108759071" expanded="true" signature="5960:6004" ph="SELECT fee F... shapeshift" />
+            <marker date="1511108759071" expanded="true" signature="6099:6148" ph="SELECT value... coinmarketcap" />
+            <marker date="1511108759071" expanded="true" signature="6246:6295" ph="SELECT value... coinmarketcap" />
+            <marker date="1511108759071" expanded="true" signature="6409:6571" ph="INSERT INTO exchanges... " />
+            <marker date="1511108759071" expanded="true" signature="10055:10185" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="15158:15303" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="15158:15305" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="19345:19490" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="19345:19492" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="21192:21253" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="21599:21660" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="21922:21981" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="21922:21983" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="25469:25615" ph="UPDATE excha... " />
           </folding>
         </state>
       </provider>
@@ -1145,13 +1145,13 @@
           <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1511025393283" expanded="true" signature="217:287" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="217:318" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="217:345" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="217:366" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="217:367" ph="CREATE TABLE... IF" />
-            <marker date="1511025393283" expanded="true" signature="217:369" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="948:1015" ph="INSERT INTO coinmarketcap... " />
+            <marker date="1511108756942" expanded="true" signature="198:268" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="198:299" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="198:326" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="198:347" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="198:348" ph="CREATE TABLE... IF" />
+            <marker date="1511108756942" expanded="true" signature="198:350" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="929:996" ph="INSERT INTO coinmarketcap... " />
           </folding>
         </state>
       </provider>
@@ -1162,10 +1162,10 @@
           <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1511025379577" expanded="true" signature="217:331" ph="CREATE TABLE... IF" />
-            <marker date="1511025379577" expanded="true" signature="217:333" ph="CREATE TABLE... shapeshift" />
-            <marker date="1511025379577" expanded="true" signature="900:948" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511025379577" expanded="true" signature="1064:1116" ph="INSERT INTO shapeshift... " />
+            <marker date="1511108756956" expanded="true" signature="198:312" ph="CREATE TABLE... IF" />
+            <marker date="1511108756956" expanded="true" signature="198:314" ph="CREATE TABLE... shapeshift" />
+            <marker date="1511108756956" expanded="true" signature="881:929" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511108756956" expanded="true" signature="1045:1097" ph="INSERT INTO shapeshift... " />
           </folding>
         </state>
       </provider>
@@ -1176,35 +1176,34 @@
           <caret line="204" column="65" lean-forward="true" selection-start-line="204" selection-start-column="65" selection-end-line="204" selection-end-column="65" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
-            <marker date="1511050164577" expanded="true" signature="2922:3346" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3401" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3463" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3523" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3582" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3639" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3694" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3747" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3806" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3865" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3922" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3961" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3962" ph="CREATE TABLE... IF" />
-            <marker date="1511050164577" expanded="true" signature="5943:5985" ph="SELECT fee F... shapeshift" />
-            <marker date="1511050164577" expanded="true" signature="5943:5987" ph="SELECT fee F... shapeshift" />
-            <marker date="1511050164577" expanded="true" signature="6082:6131" ph="SELECT value... coinmarketcap" />
-            <marker date="1511050164577" expanded="true" signature="6229:6278" ph="SELECT value... coinmarketcap" />
-            <marker date="1511050164577" expanded="true" signature="6392:6554" ph="INSERT INTO exchanges... " />
-            <marker date="1511050164577" expanded="true" signature="9484:9614" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="13383:13527" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="13383:13529" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="17547:17692" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="17547:17694" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="21165:21310" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="21165:21312" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="22769:22830" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="23164:23225" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="23475:23534" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="23475:23536" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="2939:3363" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3418" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3480" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3540" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3599" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3656" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3711" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3764" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3823" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3882" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3939" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3978" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3979" ph="CREATE TABLE... IF" />
+            <marker date="1511108759071" expanded="true" signature="5960:6002" ph="SELECT fee F... shapeshift" />
+            <marker date="1511108759071" expanded="true" signature="5960:6004" ph="SELECT fee F... shapeshift" />
+            <marker date="1511108759071" expanded="true" signature="6099:6148" ph="SELECT value... coinmarketcap" />
+            <marker date="1511108759071" expanded="true" signature="6246:6295" ph="SELECT value... coinmarketcap" />
+            <marker date="1511108759071" expanded="true" signature="6409:6571" ph="INSERT INTO exchanges... " />
+            <marker date="1511108759071" expanded="true" signature="10055:10185" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="15158:15303" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="15158:15305" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="19345:19490" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="19345:19492" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="21192:21253" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="21599:21660" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="21922:21981" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="21922:21983" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="25469:25615" ph="UPDATE excha... " />
           </folding>
         </state>
       </provider>
@@ -1215,13 +1214,13 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1511025393283" expanded="true" signature="217:287" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="217:318" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="217:345" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="217:366" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="217:367" ph="CREATE TABLE... IF" />
-            <marker date="1511025393283" expanded="true" signature="217:369" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="948:1015" ph="INSERT INTO coinmarketcap... " />
+            <marker date="1511108756942" expanded="true" signature="198:268" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="198:299" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="198:326" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="198:347" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="198:348" ph="CREATE TABLE... IF" />
+            <marker date="1511108756942" expanded="true" signature="198:350" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="929:996" ph="INSERT INTO coinmarketcap... " />
           </folding>
         </state>
       </provider>
@@ -1232,35 +1231,34 @@
           <caret line="314" column="0" lean-forward="false" selection-start-line="314" selection-start-column="0" selection-end-line="314" selection-end-column="0" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
-            <marker date="1511050164577" expanded="true" signature="2922:3346" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3401" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3463" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3523" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3582" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3639" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3694" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3747" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3806" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3865" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3922" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3961" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3962" ph="CREATE TABLE... IF" />
-            <marker date="1511050164577" expanded="true" signature="5943:5985" ph="SELECT fee F... shapeshift" />
-            <marker date="1511050164577" expanded="true" signature="5943:5987" ph="SELECT fee F... shapeshift" />
-            <marker date="1511050164577" expanded="true" signature="6082:6131" ph="SELECT value... coinmarketcap" />
-            <marker date="1511050164577" expanded="true" signature="6229:6278" ph="SELECT value... coinmarketcap" />
-            <marker date="1511050164577" expanded="true" signature="6392:6554" ph="INSERT INTO exchanges... " />
-            <marker date="1511050164577" expanded="true" signature="9484:9614" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="13383:13527" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="13383:13529" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="17547:17692" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="17547:17694" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="21165:21310" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="21165:21312" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="22769:22830" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="23164:23225" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="23475:23534" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="23475:23536" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="2939:3363" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3418" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3480" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3540" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3599" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3656" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3711" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3764" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3823" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3882" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3939" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3978" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3979" ph="CREATE TABLE... IF" />
+            <marker date="1511108759071" expanded="true" signature="5960:6002" ph="SELECT fee F... shapeshift" />
+            <marker date="1511108759071" expanded="true" signature="5960:6004" ph="SELECT fee F... shapeshift" />
+            <marker date="1511108759071" expanded="true" signature="6099:6148" ph="SELECT value... coinmarketcap" />
+            <marker date="1511108759071" expanded="true" signature="6246:6295" ph="SELECT value... coinmarketcap" />
+            <marker date="1511108759071" expanded="true" signature="6409:6571" ph="INSERT INTO exchanges... " />
+            <marker date="1511108759071" expanded="true" signature="10055:10185" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="15158:15303" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="15158:15305" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="19345:19490" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="19345:19492" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="21192:21253" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="21599:21660" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="21922:21981" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="21922:21983" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="25469:25615" ph="UPDATE excha... " />
           </folding>
         </state>
       </provider>
@@ -1271,10 +1269,10 @@
           <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1511025379577" expanded="true" signature="217:331" ph="CREATE TABLE... IF" />
-            <marker date="1511025379577" expanded="true" signature="217:333" ph="CREATE TABLE... shapeshift" />
-            <marker date="1511025379577" expanded="true" signature="900:948" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511025379577" expanded="true" signature="1064:1116" ph="INSERT INTO shapeshift... " />
+            <marker date="1511108756956" expanded="true" signature="198:312" ph="CREATE TABLE... IF" />
+            <marker date="1511108756956" expanded="true" signature="198:314" ph="CREATE TABLE... shapeshift" />
+            <marker date="1511108756956" expanded="true" signature="881:929" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511108756956" expanded="true" signature="1045:1097" ph="INSERT INTO shapeshift... " />
           </folding>
         </state>
       </provider>
@@ -1285,13 +1283,13 @@
           <caret line="9" column="32" lean-forward="false" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1511025393283" expanded="true" signature="217:287" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="217:318" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="217:345" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="217:366" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="217:367" ph="CREATE TABLE... IF" />
-            <marker date="1511025393283" expanded="true" signature="217:369" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="948:1015" ph="INSERT INTO coinmarketcap... " />
+            <marker date="1511108756942" expanded="true" signature="198:268" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="198:299" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="198:326" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="198:347" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="198:348" ph="CREATE TABLE... IF" />
+            <marker date="1511108756942" expanded="true" signature="198:350" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="929:996" ph="INSERT INTO coinmarketcap... " />
           </folding>
         </state>
       </provider>
@@ -1302,10 +1300,10 @@
           <caret line="4" column="136" lean-forward="true" selection-start-line="4" selection-start-column="124" selection-end-line="4" selection-end-column="136" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1511025379577" expanded="true" signature="217:331" ph="CREATE TABLE... IF" />
-            <marker date="1511025379577" expanded="true" signature="217:333" ph="CREATE TABLE... shapeshift" />
-            <marker date="1511025379577" expanded="true" signature="900:948" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511025379577" expanded="true" signature="1064:1116" ph="INSERT INTO shapeshift... " />
+            <marker date="1511108756956" expanded="true" signature="198:312" ph="CREATE TABLE... IF" />
+            <marker date="1511108756956" expanded="true" signature="198:314" ph="CREATE TABLE... shapeshift" />
+            <marker date="1511108756956" expanded="true" signature="881:929" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511108756956" expanded="true" signature="1045:1097" ph="INSERT INTO shapeshift... " />
           </folding>
         </state>
       </provider>
@@ -1316,35 +1314,34 @@
           <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
-            <marker date="1511050164577" expanded="true" signature="2922:3346" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3401" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3463" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3523" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3582" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3639" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3694" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3747" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3806" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3865" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3922" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3961" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3962" ph="CREATE TABLE... IF" />
-            <marker date="1511050164577" expanded="true" signature="5943:5985" ph="SELECT fee F... shapeshift" />
-            <marker date="1511050164577" expanded="true" signature="5943:5987" ph="SELECT fee F... shapeshift" />
-            <marker date="1511050164577" expanded="true" signature="6082:6131" ph="SELECT value... coinmarketcap" />
-            <marker date="1511050164577" expanded="true" signature="6229:6278" ph="SELECT value... coinmarketcap" />
-            <marker date="1511050164577" expanded="true" signature="6392:6554" ph="INSERT INTO exchanges... " />
-            <marker date="1511050164577" expanded="true" signature="9484:9614" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="13383:13527" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="13383:13529" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="17547:17692" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="17547:17694" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="21165:21310" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="21165:21312" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="22769:22830" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="23164:23225" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="23475:23534" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="23475:23536" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="2939:3363" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3418" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3480" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3540" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3599" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3656" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3711" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3764" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3823" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3882" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3939" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3978" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3979" ph="CREATE TABLE... IF" />
+            <marker date="1511108759071" expanded="true" signature="5960:6002" ph="SELECT fee F... shapeshift" />
+            <marker date="1511108759071" expanded="true" signature="5960:6004" ph="SELECT fee F... shapeshift" />
+            <marker date="1511108759071" expanded="true" signature="6099:6148" ph="SELECT value... coinmarketcap" />
+            <marker date="1511108759071" expanded="true" signature="6246:6295" ph="SELECT value... coinmarketcap" />
+            <marker date="1511108759071" expanded="true" signature="6409:6571" ph="INSERT INTO exchanges... " />
+            <marker date="1511108759071" expanded="true" signature="10055:10185" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="15158:15303" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="15158:15305" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="19345:19490" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="19345:19492" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="21192:21253" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="21599:21660" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="21922:21981" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="21922:21983" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="25469:25615" ph="UPDATE excha... " />
           </folding>
         </state>
       </provider>
@@ -1355,13 +1352,13 @@
           <caret line="9" column="32" lean-forward="false" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1511025393283" expanded="true" signature="217:287" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="217:318" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="217:345" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="217:366" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="217:367" ph="CREATE TABLE... IF" />
-            <marker date="1511025393283" expanded="true" signature="217:369" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="948:1015" ph="INSERT INTO coinmarketcap... " />
+            <marker date="1511108756942" expanded="true" signature="198:268" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="198:299" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="198:326" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="198:347" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="198:348" ph="CREATE TABLE... IF" />
+            <marker date="1511108756942" expanded="true" signature="198:350" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="929:996" ph="INSERT INTO coinmarketcap... " />
           </folding>
         </state>
       </provider>
@@ -1372,10 +1369,10 @@
           <caret line="7" column="14" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="7" selection-end-column="14" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1511025379577" expanded="true" signature="217:331" ph="CREATE TABLE... IF" />
-            <marker date="1511025379577" expanded="true" signature="217:333" ph="CREATE TABLE... shapeshift" />
-            <marker date="1511025379577" expanded="true" signature="900:948" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511025379577" expanded="true" signature="1064:1116" ph="INSERT INTO shapeshift... " />
+            <marker date="1511108756956" expanded="true" signature="198:312" ph="CREATE TABLE... IF" />
+            <marker date="1511108756956" expanded="true" signature="198:314" ph="CREATE TABLE... shapeshift" />
+            <marker date="1511108756956" expanded="true" signature="881:929" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511108756956" expanded="true" signature="1045:1097" ph="INSERT INTO shapeshift... " />
           </folding>
         </state>
       </provider>
@@ -1386,35 +1383,34 @@
           <caret line="16" column="28" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
-            <marker date="1511050164577" expanded="true" signature="2922:3346" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3401" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3463" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3523" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3582" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3639" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3694" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3747" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3806" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3865" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3922" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3961" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3962" ph="CREATE TABLE... IF" />
-            <marker date="1511050164577" expanded="true" signature="5943:5985" ph="SELECT fee F... shapeshift" />
-            <marker date="1511050164577" expanded="true" signature="5943:5987" ph="SELECT fee F... shapeshift" />
-            <marker date="1511050164577" expanded="true" signature="6082:6131" ph="SELECT value... coinmarketcap" />
-            <marker date="1511050164577" expanded="true" signature="6229:6278" ph="SELECT value... coinmarketcap" />
-            <marker date="1511050164577" expanded="true" signature="6392:6554" ph="INSERT INTO exchanges... " />
-            <marker date="1511050164577" expanded="true" signature="9484:9614" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="13383:13527" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="13383:13529" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="17547:17692" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="17547:17694" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="21165:21310" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="21165:21312" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="22769:22830" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="23164:23225" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="23475:23534" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="23475:23536" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="2939:3363" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3418" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3480" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3540" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3599" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3656" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3711" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3764" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3823" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3882" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3939" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3978" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3979" ph="CREATE TABLE... IF" />
+            <marker date="1511108759071" expanded="true" signature="5960:6002" ph="SELECT fee F... shapeshift" />
+            <marker date="1511108759071" expanded="true" signature="5960:6004" ph="SELECT fee F... shapeshift" />
+            <marker date="1511108759071" expanded="true" signature="6099:6148" ph="SELECT value... coinmarketcap" />
+            <marker date="1511108759071" expanded="true" signature="6246:6295" ph="SELECT value... coinmarketcap" />
+            <marker date="1511108759071" expanded="true" signature="6409:6571" ph="INSERT INTO exchanges... " />
+            <marker date="1511108759071" expanded="true" signature="10055:10185" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="15158:15303" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="15158:15305" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="19345:19490" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="19345:19492" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="21192:21253" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="21599:21660" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="21922:21981" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="21922:21983" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="25469:25615" ph="UPDATE excha... " />
           </folding>
         </state>
       </provider>
@@ -1425,13 +1421,13 @@
           <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1511025393283" expanded="true" signature="217:287" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="217:318" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="217:345" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="217:366" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="217:367" ph="CREATE TABLE... IF" />
-            <marker date="1511025393283" expanded="true" signature="217:369" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="948:1015" ph="INSERT INTO coinmarketcap... " />
+            <marker date="1511108756942" expanded="true" signature="198:268" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="198:299" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="198:326" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="198:347" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="198:348" ph="CREATE TABLE... IF" />
+            <marker date="1511108756942" expanded="true" signature="198:350" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="929:996" ph="INSERT INTO coinmarketcap... " />
           </folding>
         </state>
       </provider>
@@ -1442,10 +1438,10 @@
           <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="14" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1511025379577" expanded="true" signature="217:331" ph="CREATE TABLE... IF" />
-            <marker date="1511025379577" expanded="true" signature="217:333" ph="CREATE TABLE... shapeshift" />
-            <marker date="1511025379577" expanded="true" signature="900:948" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511025379577" expanded="true" signature="1064:1116" ph="INSERT INTO shapeshift... " />
+            <marker date="1511108756956" expanded="true" signature="198:312" ph="CREATE TABLE... IF" />
+            <marker date="1511108756956" expanded="true" signature="198:314" ph="CREATE TABLE... shapeshift" />
+            <marker date="1511108756956" expanded="true" signature="881:929" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511108756956" expanded="true" signature="1045:1097" ph="INSERT INTO shapeshift... " />
           </folding>
         </state>
       </provider>
@@ -1456,35 +1452,34 @@
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
-            <marker date="1511050164577" expanded="true" signature="2922:3346" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3401" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3463" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3523" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3582" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3639" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3694" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3747" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3806" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3865" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3922" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3961" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3962" ph="CREATE TABLE... IF" />
-            <marker date="1511050164577" expanded="true" signature="5943:5985" ph="SELECT fee F... shapeshift" />
-            <marker date="1511050164577" expanded="true" signature="5943:5987" ph="SELECT fee F... shapeshift" />
-            <marker date="1511050164577" expanded="true" signature="6082:6131" ph="SELECT value... coinmarketcap" />
-            <marker date="1511050164577" expanded="true" signature="6229:6278" ph="SELECT value... coinmarketcap" />
-            <marker date="1511050164577" expanded="true" signature="6392:6554" ph="INSERT INTO exchanges... " />
-            <marker date="1511050164577" expanded="true" signature="9484:9614" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="13383:13527" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="13383:13529" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="17547:17692" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="17547:17694" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="21165:21310" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="21165:21312" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="22769:22830" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="23164:23225" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="23475:23534" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="23475:23536" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="2939:3363" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3418" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3480" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3540" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3599" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3656" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3711" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3764" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3823" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3882" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3939" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3978" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3979" ph="CREATE TABLE... IF" />
+            <marker date="1511108759071" expanded="true" signature="5960:6002" ph="SELECT fee F... shapeshift" />
+            <marker date="1511108759071" expanded="true" signature="5960:6004" ph="SELECT fee F... shapeshift" />
+            <marker date="1511108759071" expanded="true" signature="6099:6148" ph="SELECT value... coinmarketcap" />
+            <marker date="1511108759071" expanded="true" signature="6246:6295" ph="SELECT value... coinmarketcap" />
+            <marker date="1511108759071" expanded="true" signature="6409:6571" ph="INSERT INTO exchanges... " />
+            <marker date="1511108759071" expanded="true" signature="10055:10185" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="15158:15303" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="15158:15305" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="19345:19490" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="19345:19492" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="21192:21253" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="21599:21660" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="21922:21981" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="21922:21983" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="25469:25615" ph="UPDATE excha... " />
           </folding>
         </state>
       </provider>
@@ -1495,13 +1490,13 @@
           <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1511025393283" expanded="true" signature="217:287" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="217:318" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="217:345" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="217:366" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="217:367" ph="CREATE TABLE... IF" />
-            <marker date="1511025393283" expanded="true" signature="217:369" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="948:1015" ph="INSERT INTO coinmarketcap... " />
+            <marker date="1511108756942" expanded="true" signature="198:268" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="198:299" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="198:326" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="198:347" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="198:348" ph="CREATE TABLE... IF" />
+            <marker date="1511108756942" expanded="true" signature="198:350" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="929:996" ph="INSERT INTO coinmarketcap... " />
           </folding>
         </state>
       </provider>
@@ -1512,10 +1507,10 @@
           <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="14" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1511025379577" expanded="true" signature="217:331" ph="CREATE TABLE... IF" />
-            <marker date="1511025379577" expanded="true" signature="217:333" ph="CREATE TABLE... shapeshift" />
-            <marker date="1511025379577" expanded="true" signature="900:948" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511025379577" expanded="true" signature="1064:1116" ph="INSERT INTO shapeshift... " />
+            <marker date="1511108756956" expanded="true" signature="198:312" ph="CREATE TABLE... IF" />
+            <marker date="1511108756956" expanded="true" signature="198:314" ph="CREATE TABLE... shapeshift" />
+            <marker date="1511108756956" expanded="true" signature="881:929" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511108756956" expanded="true" signature="1045:1097" ph="INSERT INTO shapeshift... " />
           </folding>
         </state>
       </provider>
@@ -1526,35 +1521,34 @@
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
-            <marker date="1511050164577" expanded="true" signature="2922:3346" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3401" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3463" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3523" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3582" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3639" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3694" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3747" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3806" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3865" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3922" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3961" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3962" ph="CREATE TABLE... IF" />
-            <marker date="1511050164577" expanded="true" signature="5943:5985" ph="SELECT fee F... shapeshift" />
-            <marker date="1511050164577" expanded="true" signature="5943:5987" ph="SELECT fee F... shapeshift" />
-            <marker date="1511050164577" expanded="true" signature="6082:6131" ph="SELECT value... coinmarketcap" />
-            <marker date="1511050164577" expanded="true" signature="6229:6278" ph="SELECT value... coinmarketcap" />
-            <marker date="1511050164577" expanded="true" signature="6392:6554" ph="INSERT INTO exchanges... " />
-            <marker date="1511050164577" expanded="true" signature="9484:9614" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="13383:13527" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="13383:13529" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="17547:17692" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="17547:17694" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="21165:21310" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="21165:21312" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="22769:22830" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="23164:23225" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="23475:23534" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="23475:23536" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="2939:3363" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3418" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3480" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3540" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3599" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3656" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3711" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3764" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3823" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3882" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3939" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3978" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3979" ph="CREATE TABLE... IF" />
+            <marker date="1511108759071" expanded="true" signature="5960:6002" ph="SELECT fee F... shapeshift" />
+            <marker date="1511108759071" expanded="true" signature="5960:6004" ph="SELECT fee F... shapeshift" />
+            <marker date="1511108759071" expanded="true" signature="6099:6148" ph="SELECT value... coinmarketcap" />
+            <marker date="1511108759071" expanded="true" signature="6246:6295" ph="SELECT value... coinmarketcap" />
+            <marker date="1511108759071" expanded="true" signature="6409:6571" ph="INSERT INTO exchanges... " />
+            <marker date="1511108759071" expanded="true" signature="10055:10185" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="15158:15303" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="15158:15305" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="19345:19490" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="19345:19492" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="21192:21253" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="21599:21660" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="21922:21981" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="21922:21983" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="25469:25615" ph="UPDATE excha... " />
           </folding>
         </state>
       </provider>
@@ -1565,13 +1559,13 @@
           <caret line="3" column="10" lean-forward="false" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1511025393283" expanded="true" signature="217:287" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="217:318" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="217:345" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="217:366" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="217:367" ph="CREATE TABLE... IF" />
-            <marker date="1511025393283" expanded="true" signature="217:369" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="948:1015" ph="INSERT INTO coinmarketcap... " />
+            <marker date="1511108756942" expanded="true" signature="198:268" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="198:299" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="198:326" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="198:347" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="198:348" ph="CREATE TABLE... IF" />
+            <marker date="1511108756942" expanded="true" signature="198:350" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="929:996" ph="INSERT INTO coinmarketcap... " />
           </folding>
         </state>
       </provider>
@@ -1582,10 +1576,10 @@
           <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1511025379577" expanded="true" signature="217:331" ph="CREATE TABLE... IF" />
-            <marker date="1511025379577" expanded="true" signature="217:333" ph="CREATE TABLE... shapeshift" />
-            <marker date="1511025379577" expanded="true" signature="900:948" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511025379577" expanded="true" signature="1064:1116" ph="INSERT INTO shapeshift... " />
+            <marker date="1511108756956" expanded="true" signature="198:312" ph="CREATE TABLE... IF" />
+            <marker date="1511108756956" expanded="true" signature="198:314" ph="CREATE TABLE... shapeshift" />
+            <marker date="1511108756956" expanded="true" signature="881:929" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511108756956" expanded="true" signature="1045:1097" ph="INSERT INTO shapeshift... " />
           </folding>
         </state>
       </provider>
@@ -1596,35 +1590,34 @@
           <caret line="127" column="70" lean-forward="true" selection-start-line="127" selection-start-column="70" selection-end-line="127" selection-end-column="70" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
-            <marker date="1511050164577" expanded="true" signature="2922:3346" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3401" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3463" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3523" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3582" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3639" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3694" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3747" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3806" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3865" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3922" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3961" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3962" ph="CREATE TABLE... IF" />
-            <marker date="1511050164577" expanded="true" signature="5943:5985" ph="SELECT fee F... shapeshift" />
-            <marker date="1511050164577" expanded="true" signature="5943:5987" ph="SELECT fee F... shapeshift" />
-            <marker date="1511050164577" expanded="true" signature="6082:6131" ph="SELECT value... coinmarketcap" />
-            <marker date="1511050164577" expanded="true" signature="6229:6278" ph="SELECT value... coinmarketcap" />
-            <marker date="1511050164577" expanded="true" signature="6392:6554" ph="INSERT INTO exchanges... " />
-            <marker date="1511050164577" expanded="true" signature="9484:9614" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="13383:13527" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="13383:13529" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="17547:17692" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="17547:17694" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="21165:21310" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="21165:21312" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="22769:22830" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="23164:23225" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="23475:23534" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="23475:23536" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="2939:3363" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3418" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3480" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3540" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3599" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3656" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3711" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3764" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3823" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3882" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3939" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3978" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3979" ph="CREATE TABLE... IF" />
+            <marker date="1511108759071" expanded="true" signature="5960:6002" ph="SELECT fee F... shapeshift" />
+            <marker date="1511108759071" expanded="true" signature="5960:6004" ph="SELECT fee F... shapeshift" />
+            <marker date="1511108759071" expanded="true" signature="6099:6148" ph="SELECT value... coinmarketcap" />
+            <marker date="1511108759071" expanded="true" signature="6246:6295" ph="SELECT value... coinmarketcap" />
+            <marker date="1511108759071" expanded="true" signature="6409:6571" ph="INSERT INTO exchanges... " />
+            <marker date="1511108759071" expanded="true" signature="10055:10185" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="15158:15303" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="15158:15305" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="19345:19490" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="19345:19492" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="21192:21253" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="21599:21660" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="21922:21981" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="21922:21983" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="25469:25615" ph="UPDATE excha... " />
           </folding>
         </state>
       </provider>
@@ -1635,10 +1628,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1511025379577" expanded="true" signature="217:331" ph="CREATE TABLE... IF" />
-            <marker date="1511025379577" expanded="true" signature="217:333" ph="CREATE TABLE... shapeshift" />
-            <marker date="1511025379577" expanded="true" signature="900:948" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511025379577" expanded="true" signature="1064:1116" ph="INSERT INTO shapeshift... " />
+            <marker date="1511108756956" expanded="true" signature="198:312" ph="CREATE TABLE... IF" />
+            <marker date="1511108756956" expanded="true" signature="198:314" ph="CREATE TABLE... shapeshift" />
+            <marker date="1511108756956" expanded="true" signature="881:929" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511108756956" expanded="true" signature="1045:1097" ph="INSERT INTO shapeshift... " />
           </folding>
         </state>
       </provider>
@@ -1649,10 +1642,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1511025379577" expanded="true" signature="217:331" ph="CREATE TABLE... IF" />
-            <marker date="1511025379577" expanded="true" signature="217:333" ph="CREATE TABLE... shapeshift" />
-            <marker date="1511025379577" expanded="true" signature="900:948" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511025379577" expanded="true" signature="1064:1116" ph="INSERT INTO shapeshift... " />
+            <marker date="1511108756956" expanded="true" signature="198:312" ph="CREATE TABLE... IF" />
+            <marker date="1511108756956" expanded="true" signature="198:314" ph="CREATE TABLE... shapeshift" />
+            <marker date="1511108756956" expanded="true" signature="881:929" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511108756956" expanded="true" signature="1045:1097" ph="INSERT INTO shapeshift... " />
           </folding>
         </state>
       </provider>
@@ -1663,10 +1656,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1511025379577" expanded="true" signature="217:331" ph="CREATE TABLE... IF" />
-            <marker date="1511025379577" expanded="true" signature="217:333" ph="CREATE TABLE... shapeshift" />
-            <marker date="1511025379577" expanded="true" signature="900:948" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511025379577" expanded="true" signature="1064:1116" ph="INSERT INTO shapeshift... " />
+            <marker date="1511108756956" expanded="true" signature="198:312" ph="CREATE TABLE... IF" />
+            <marker date="1511108756956" expanded="true" signature="198:314" ph="CREATE TABLE... shapeshift" />
+            <marker date="1511108756956" expanded="true" signature="881:929" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511108756956" expanded="true" signature="1045:1097" ph="INSERT INTO shapeshift... " />
           </folding>
         </state>
       </provider>
@@ -1677,10 +1670,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1511025379577" expanded="true" signature="217:331" ph="CREATE TABLE... IF" />
-            <marker date="1511025379577" expanded="true" signature="217:333" ph="CREATE TABLE... shapeshift" />
-            <marker date="1511025379577" expanded="true" signature="900:948" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511025379577" expanded="true" signature="1064:1116" ph="INSERT INTO shapeshift... " />
+            <marker date="1511108756956" expanded="true" signature="198:312" ph="CREATE TABLE... IF" />
+            <marker date="1511108756956" expanded="true" signature="198:314" ph="CREATE TABLE... shapeshift" />
+            <marker date="1511108756956" expanded="true" signature="881:929" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511108756956" expanded="true" signature="1045:1097" ph="INSERT INTO shapeshift... " />
           </folding>
         </state>
       </provider>
@@ -1757,72 +1750,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/Coinmarketcap.py">
+    <entry file="file://$PROJECT_DIR$/main/Shapeshift.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
-          <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+          <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1511025393283" expanded="true" signature="217:287" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="217:318" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="217:345" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="217:366" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="217:367" ph="CREATE TABLE... IF" />
-            <marker date="1511025393283" expanded="true" signature="217:369" ph="CREATE TABLE... coinmarketcap" />
-            <marker date="1511025393283" expanded="true" signature="948:1015" ph="INSERT INTO coinmarketcap... " />
+            <marker date="1511108756956" expanded="true" signature="198:312" ph="CREATE TABLE... IF" />
+            <marker date="1511108756956" expanded="true" signature="198:314" ph="CREATE TABLE... shapeshift" />
+            <marker date="1511108756956" expanded="true" signature="881:929" ph="SELECT 1 FRO... shapeshift" />
+            <marker date="1511108756956" expanded="true" signature="1045:1097" ph="INSERT INTO shapeshift... " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/Shapeshift.py">
+    <entry file="file://$PROJECT_DIR$/main/Coinmarketcap.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+        <state relative-caret-position="609">
+          <caret line="29" column="33" lean-forward="false" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1511025379577" expanded="true" signature="217:331" ph="CREATE TABLE... IF" />
-            <marker date="1511025379577" expanded="true" signature="217:333" ph="CREATE TABLE... shapeshift" />
-            <marker date="1511025379577" expanded="true" signature="900:948" ph="SELECT 1 FRO... shapeshift" />
-            <marker date="1511025379577" expanded="true" signature="1064:1116" ph="INSERT INTO shapeshift... " />
+            <marker date="1511108756942" expanded="true" signature="198:268" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="198:299" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="198:326" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="198:347" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="198:348" ph="CREATE TABLE... IF" />
+            <marker date="1511108756942" expanded="true" signature="198:350" ph="CREATE TABLE... coinmarketcap" />
+            <marker date="1511108756942" expanded="true" signature="929:996" ph="INSERT INTO coinmarketcap... " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main/Scraper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="204" column="268" lean-forward="false" selection-start-line="204" selection-start-column="268" selection-end-line="204" selection-end-column="268" />
+        <state relative-caret-position="534">
+          <caret line="448" column="47" lean-forward="true" selection-start-line="448" selection-start-column="47" selection-end-line="448" selection-end-column="47" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
-            <marker date="1511050164577" expanded="true" signature="2922:3346" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3401" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3463" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3523" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3582" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3639" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3694" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3747" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3806" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3865" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3922" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3961" ph="CREATE TABLE... exchanges" />
-            <marker date="1511050164577" expanded="true" signature="2922:3962" ph="CREATE TABLE... IF" />
-            <marker date="1511050164577" expanded="true" signature="5943:5985" ph="SELECT fee F... shapeshift" />
-            <marker date="1511050164577" expanded="true" signature="5943:5987" ph="SELECT fee F... shapeshift" />
-            <marker date="1511050164577" expanded="true" signature="6082:6131" ph="SELECT value... coinmarketcap" />
-            <marker date="1511050164577" expanded="true" signature="6229:6278" ph="SELECT value... coinmarketcap" />
-            <marker date="1511050164577" expanded="true" signature="6392:6554" ph="INSERT INTO exchanges... " />
-            <marker date="1511050164577" expanded="true" signature="9484:9614" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="13383:13527" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="13383:13529" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="17547:17692" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="17547:17694" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="21165:21310" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="21165:21312" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="22769:22830" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="23164:23225" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="23475:23534" ph="UPDATE excha... " />
-            <marker date="1511050164577" expanded="true" signature="23475:23536" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="2939:3363" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3418" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3480" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3540" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3599" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3656" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3711" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3764" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3823" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3882" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3939" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3978" ph="CREATE TABLE... exchanges" />
+            <marker date="1511108759071" expanded="true" signature="2939:3979" ph="CREATE TABLE... IF" />
+            <marker date="1511108759071" expanded="true" signature="5960:6002" ph="SELECT fee F... shapeshift" />
+            <marker date="1511108759071" expanded="true" signature="5960:6004" ph="SELECT fee F... shapeshift" />
+            <marker date="1511108759071" expanded="true" signature="6099:6148" ph="SELECT value... coinmarketcap" />
+            <marker date="1511108759071" expanded="true" signature="6246:6295" ph="SELECT value... coinmarketcap" />
+            <marker date="1511108759071" expanded="true" signature="6409:6571" ph="INSERT INTO exchanges... " />
+            <marker date="1511108759071" expanded="true" signature="10055:10185" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="15158:15303" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="15158:15305" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="19345:19490" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="19345:19492" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="21192:21253" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="21599:21660" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="21922:21981" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="21922:21983" ph="UPDATE excha... " />
+            <marker date="1511108759071" expanded="true" signature="25469:25615" ph="UPDATE excha... " />
           </folding>
         </state>
       </provider>

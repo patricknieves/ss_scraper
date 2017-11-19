@@ -1,7 +1,6 @@
 import MySQLdb
 import requests
-import mysql
-import mysql.connector
+import traceback
 
 def create_table():
     db = MySQLdb.connect(host="localhost", user="root", passwd="Sebis2017", db="scraper")
@@ -32,5 +31,6 @@ def update_shapeshift_fees():
                 db.commit()
                 #arr.remove(currency)
             except:
+                traceback.print_exc()
                 db.rollback()
     db.close()

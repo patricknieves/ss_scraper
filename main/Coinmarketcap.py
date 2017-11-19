@@ -1,7 +1,6 @@
 import MySQLdb
 import requests
-import mysql
-import mysql.connector
+import traceback
 
 def create_table():
     db = MySQLdb.connect(host="localhost", user="root", passwd="Sebis2017", db="scraper")
@@ -28,5 +27,6 @@ def update_coinmarketcap_data():
             db.commit()
             #arr.remove(currencyData["symbol"])
         except:
+            traceback.print_exc()
             db.rollback()
     db.close()
