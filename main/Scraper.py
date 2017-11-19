@@ -251,11 +251,12 @@ def get_bitcoin_transaction(new_exchanges):
                 controller.signal(Signal.NEWNYM)
             try:
                 block = requests.get("https://blockchain.info/de/block-height/" + (str(last_block_number - number)) + "?format=json").json()["blocks"][0]
+                transactions = block["tx"]
             except:
                 print("Counldn't get block from Blockchain: " + str(last_block_number - number))
                 traceback.print_exc()
                 pass
-            transactions = block["tx"]
+
             if transactions:
                 # Check if Block much older than Exchanges
                 time_oldest_transaction = datetime.datetime.utcfromtimestamp(filtered_new__exchanges[-1]["timestamp"])
@@ -328,11 +329,12 @@ def get_litecoin_transaction(new_exchanges):
                 controller.signal(Signal.NEWNYM)
             try:
                 block = requests.get("https://chain.so/api/v2/block/LTC/" + (str(last_block_number - number))).json()["data"]
+                transactions = block["txs"]
             except:
                 print("Counldn't get block from Chain.so: " + str(last_block_number - number))
                 traceback.print_exc()
                 pass
-            transactions = block["txs"]
+
             if transactions:
                 # Check if Block much older than Exchanges
                 time_oldest_transaction = datetime.datetime.utcfromtimestamp(filtered_new__exchanges[-1]["timestamp"])
@@ -376,7 +378,7 @@ def search_corresponding_transaction(currency, tx_hash, exchange_id):
     try:
         if currency == "ETH":
             transaction = requests.get("https://api.infura.io/v1/jsonrpc/mainnet/eth_getTransactionByHash?params=%5B%22" + tx_hash + "%22%5D&token=Wh9YuEIhi7tqseXn8550").json()["result"]
-            block = requests.get("https://api.infura.io/v1/jsonrpc/mainnet/eth_getBlockByNumber?params=%5B%22" + transaction["blockNumber"] + "%22%2C%20true%5D&token=Wh9YuEIhi7tqseXn8550").json()["result"]
+            block = requests.get("https://api.infura.io/v1/jsonrpc/mainnet/eth_getBlockByNumber?params=%5B%22" + str(transaction["blockNumber"]) + "%22%2C%20true%5D&token=Wh9YuEIhi7tqseXn8550").json()["result"]
             cur.execute("UPDATE exchanges SET  time_to = %s, fee_to = %s WHERE id = %s", (datetime.datetime.utcfromtimestamp(int(block["timestamp"], 16)).strftime('%Y-%m-%d %H:%M:%S'), int(transaction["gas"], 16)*(int(transaction["gasPrice"], 16) / 1E+18), exchange_id))
         elif currency == "BTC":
             transaction = requests.get("https://api.blockcypher.com/v1/btc/main/txs/" + tx_hash).json()

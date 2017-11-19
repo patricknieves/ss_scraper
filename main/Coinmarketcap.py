@@ -27,6 +27,6 @@ def update_coinmarketcap_data():
             db.commit()
             #arr.remove(currencyData["symbol"])
         except:
-            traceback.print_exc()
+            #traceback.print_exc()
             db.rollback()
     db.close()
