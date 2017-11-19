@@ -439,8 +439,7 @@ def get_ethereum_transaction_infura(new_exchanges):
                             with Controller.from_port(port = 9051) as controller:
                                 controller.authenticate()
                                 controller.signal(Signal.NEWNYM)
-                            exchange_details = requests.get(s
-                                "https://shapeshift.io/txStat/" + transaction["to"]).json()
+                            exchange_details = requests.get("https://shapeshift.io/txStat/" + transaction["to"]).json()
                             if exchange_details["status"] == "complete" and exchange_details["outgoingType"] == exchange[
                                 "curOut"]:
                                 # Update DB
