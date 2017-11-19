@@ -202,7 +202,7 @@ def get_ethereum_transaction(new_exchanges):
                                 # Update DB
                                 cur.execute(
                                     "UPDATE exchanges SET amount_to=%s, fee_from=%s, address_from=%s, address_to=%s, hash_from=%s, hash_to=%s, time_from=%s WHERE id=%s",
-                                    (exchange_details["outgoingCoin"],(transaction["gasUsed"]*(transaction["price"]/ 1E+18)),exchange_details["address"],exchange_details["withdraw"],transaction["hash"],exchange_details["transaction"],transaction["time"].replace("T","")[:-5],exchange["id"]))
+                                    (exchange_details["outgoingCoin"],(transaction["gasUsed"]*(transaction["price"]/ 1E+18)),exchange_details["address"],exchange_details["withdraw"],transaction["hash"],exchange_details["transaction"],transaction["time"].replace("T"," ")[:-5],exchange["id"]))
                                 db.commit()
                                 search_corresponding_transaction(exchange_details["outgoingType"], exchange_details["transaction"], exchange["id"])
                                 filtered_new__exchanges.remove(exchange)
