@@ -196,7 +196,7 @@ def get_ethereum_transaction(new_exchanges):
                                 controller.authenticate()
                                 controller.signal(Signal.NEWNYM)
                             exchange_details = requests.get(
-                                "https://shapeshift.io/txStat/" + transaction["to"]).json()
+                                "https://shapeshift.io/txStat/" + transaction["recipient"]).json()
                             if exchange_details["status"] == "complete" and exchange_details["outgoingType"] == exchange[
                                 "curOut"]:
                                 # Update DB
