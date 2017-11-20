@@ -173,26 +173,36 @@ def get_ethereum_transaction(new_exchanges):
     filtered_new__exchanges = [exchange for exchange in new_exchanges if "ETH" == exchange["curIn"]]
     if filtered_new__exchanges:
         # Request last block number
-        #last_block_number = int(requests.get("https://api.infura.io/v1/jsonrpc/mainnet/eth_blockNumber?token=Wh9YuEIhi7tqseXn8550").json()["result"], 16)
-        try:
-            last_block_number = requests.get("https://etherchain.org/api/blocks/count").json()["data"][0]["count"]
-        except:
+        for attempt in range(10):
+            try:
+                last_block_number = requests.get("https://etherchain.org/api/blocks/count").json()["data"][0]["count"]
+            except:
+                change_ip()
+            else:
+                break
+        else:
             print("Counldn't get last number of block from Etherchain")
             traceback.print_exc()
             return
+
         for number in range(60):
             # Get Block
             # print (str(last_block_number - number))
-            with Controller.from_port(port = 9051) as controller:
-                controller.authenticate()
-                controller.signal(Signal.NEWNYM)
+            change_ip()
             transactions = None
-            try:
-                transactions = requests.get("https://etherchain.org/api/block/" + (str(last_block_number - number)) + "/tx").json()["data"]
-            except:
+
+            for attempt in range(5):
+                try:
+                    transactions = requests.get("https://etherchain.org/api/block/" + (str(last_block_number - number)) + "/tx").json()["data"]
+                except:
+                    change_ip()
+                else:
+                    break
+            else:
                 print("Counldn't get block from Etherchain: " + str(last_block_number - number))
                 traceback.print_exc()
                 pass
+
             if transactions:
                 # Check if Block much older than Exchanges
                 time_oldest_transaction = datetime.datetime.utcfromtimestamp(filtered_new__exchanges[-1]["timestamp"])
@@ -206,9 +216,7 @@ def get_ethereum_transaction(new_exchanges):
                         # BC1 Tx must happen before SS Tx (SS Tx Time is when money recieved)
                         if exchange["amount"] == transaction["amount"]/1E+18 and ((time_exchange - time_block)).total_seconds() > 0:
                             # Change Ip Address
-                            with Controller.from_port(port = 9051) as controller:
-                                controller.authenticate()
-                                controller.signal(Signal.NEWNYM)
+                            change_ip()
                             exchange_details = requests.get(
                                 "https://shapeshift.io/txStat/" + transaction["recipient"]).json()
                             if exchange_details["status"] == "complete" and exchange_details["outgoingType"] == exchange[
@@ -238,23 +246,32 @@ def get_bitcoin_transaction(new_exchanges):
     filtered_new__exchanges = [exchange for exchange in new_exchanges if "BTC" == exchange["curIn"]]
     if filtered_new__exchanges:
         # Request last block number
-        try:
-            last_block_number = requests.get("https://blockchain.info/de/latestblock").json()["height"]
-        except:
+        for attempt in range(10):
+            try:
+                last_block_number = requests.get("https://blockchain.info/de/latestblock").json()["height"]
+            except:
+                change_ip()
+            else:
+                break
+        else:
             print("Counldn't get last number of block from Blockchain")
             traceback.print_exc()
             return
+
         for number in range(5):
             # Get Block
             # print (str(last_block_number - number))
-            with Controller.from_port(port = 9051) as controller:
-                controller.authenticate()
-                controller.signal(Signal.NEWNYM)
+            change_ip()
             transactions = None
-            try:
-                block = requests.get("https://blockchain.info/de/block-height/" + (str(last_block_number - number)) + "?format=json").json()["blocks"][0]
-                transactions = block["tx"]
-            except:
+            for attempt in range(5):
+                try:
+                    block = requests.get("https://blockchain.info/de/block-height/" + (str(last_block_number - number)) + "?format=json").json()["blocks"][0]
+                    transactions = block["tx"]
+                except:
+                    change_ip()
+                else:
+                    break
+            else:
                 print("Counldn't get block from Blockchain: " + str(last_block_number - number))
                 traceback.print_exc()
                 pass
@@ -275,20 +292,21 @@ def get_bitcoin_transaction(new_exchanges):
                             # BC1 Tx must happen before SS Tx (SS Tx Time is when money recieved)
                             if exchange["amount"]*100000000 == out["value"] and ((time_exchange - time_transaction)).total_seconds() > -500:
                                 # Change Ip Address
-                                with Controller.from_port(port = 9051) as controller:
-                                    controller.authenticate()
-                                    controller.signal(Signal.NEWNYM)
+                                change_ip()
                                 exchange_details = requests.get(
                                     "https://shapeshift.io/txStat/" + out["addr"]).json()
                                 if exchange_details["status"] == "complete" and exchange_details["outgoingType"] == exchange[
                                     "curOut"]:
                                     # Get fee_from
-                                    with Controller.from_port(port = 9051) as controller:
-                                        controller.authenticate()
-                                        controller.signal(Signal.NEWNYM)
-                                    try:
-                                        fee_from = requests.get("https://api.blockcypher.com/v1/btc/main/txs/" + transaction["hash"]).json()["fees"] / 100000000
-                                    except:
+                                    change_ip()
+                                    for attempt in range(5):
+                                        try:
+                                            fee_from = requests.get("https://api.blockcypher.com/v1/btc/main/txs/" + transaction["hash"]).json()["fees"] / 100000000
+                                        except:
+                                            change_ip()
+                                        else:
+                                            break
+                                    else:
                                         print("Counldn't get fee from blockcypher: " + str(transaction["hash"]))
                                         traceback.print_exc()
                                         pass
@@ -315,25 +333,34 @@ def get_litecoin_transaction(new_exchanges):
     filtered_new__exchanges = [exchange for exchange in new_exchanges if "LTC" == exchange["curIn"]]
     if filtered_new__exchanges:
         # Request last block number
-        try:
-            last_block_number = requests.get("https://chain.so/api/v2/get_info/LTC").json()["data"]["blocks"]
-        except:
+        for attempt in range(10):
+            try:
+                last_block_number = requests.get("https://chain.so/api/v2/get_info/LTC").json()["data"]["blocks"]
+            except:
+                change_ip()
+            else:
+                break
+        else:
             print("Counldn't get last number of block from Chain.so")
             traceback.print_exc()
             return
+
         for number in range(40):
             # Get Block
             #print (str(last_block_number - number))
             # Change IP Address after 10 Txs (API Limit)
             #if (number%10 == 9):
-            with Controller.from_port(port = 9051) as controller:
-                controller.authenticate()
-                controller.signal(Signal.NEWNYM)
+            change_ip()
             transactions = None
-            try:
-                block = requests.get("https://chain.so/api/v2/block/LTC/" + (str(last_block_number - number))).json()["data"]
-                transactions = block["txs"]
-            except:
+            for attempt in range(5):
+                try:
+                    block = requests.get("https://chain.so/api/v2/block/LTC/" + (str(last_block_number - number))).json()["data"]
+                    transactions = block["txs"]
+                except:
+                    change_ip()
+                else:
+                    break
+            else:
                 print("Counldn't get block from Chain.so: " + str(last_block_number - number))
                 traceback.print_exc()
                 pass
@@ -352,9 +379,7 @@ def get_litecoin_transaction(new_exchanges):
                             # BC1 Tx must happen before SS Tx (SS Tx Time is when money recieved)
                             if exchange["amount"] == float(out["value"]) and ((time_exchange - time_block)).total_seconds() > -300:
                                 # Change Ip Address
-                                with Controller.from_port(port = 9051) as controller:
-                                    controller.authenticate()
-                                    controller.signal(Signal.NEWNYM)
+                                change_ip()
                                 exchange_details = requests.get(
                                     "https://shapeshift.io/txStat/" + out["address"]).json()
                                 if exchange_details["status"] == "complete" and exchange_details["outgoingType"] == exchange["curOut"]:
@@ -378,20 +403,33 @@ def get_litecoin_transaction(new_exchanges):
                                     break
 
 def search_corresponding_transaction(currency, tx_hash, exchange_id):
-    try:
-        if currency == "ETH":
-            transaction = requests.get("https://api.infura.io/v1/jsonrpc/mainnet/eth_getTransactionByHash?params=%5B%22" + tx_hash + "%22%5D&token=Wh9YuEIhi7tqseXn8550").json()["result"]
-            block = requests.get("https://api.infura.io/v1/jsonrpc/mainnet/eth_getBlockByNumber?params=%5B%22" + str(transaction["blockNumber"]) + "%22%2C%20true%5D&token=Wh9YuEIhi7tqseXn8550").json()["result"]
-            cur.execute("UPDATE exchanges SET  time_to = %s, fee_to = %s WHERE id = %s", (datetime.datetime.utcfromtimestamp(int(block["timestamp"], 16)).strftime('%Y-%m-%d %H:%M:%S'), int(transaction["gas"], 16)*(int(transaction["gasPrice"], 16) / 1E+18), exchange_id))
-        elif currency == "BTC":
-            transaction = requests.get("https://api.blockcypher.com/v1/btc/main/txs/" + tx_hash).json()
-            cur.execute("UPDATE exchanges SET  time_to = %s, fee_to = %s WHERE id = %s", (transaction["received"].replace("T", " ")[:-5], (transaction["fees"] / 100000000), exchange_id))
-        elif currency == "LTC":
-            transaction = requests.get("https://api.blockcypher.com/v1/ltc/main/txs/" + tx_hash).json()
-            cur.execute("UPDATE exchanges SET  time_to = %s, fee_to = %s WHERE id = %s", (transaction["received"].replace("T", " ")[:-5], (transaction["fees"] / 100000000), exchange_id))
-    except:
+    for attempt in range(5):
+        try:
+            if currency == "ETH":
+                transaction = requests.get("https://etherchain.org/api/tx/" + tx_hash).json()["data"]
+                cur.execute("UPDATE exchanges SET  time_to = %s, fee_to = %s WHERE id = %s", (transaction["time"].replace("T"," ")[:-5], (transaction["gasUsed"]*(transaction["price"]/ 1E+18)), exchange_id))
+            elif currency == "BTC":
+                transaction = requests.get("https://api.blockcypher.com/v1/btc/main/txs/" + tx_hash).json()
+                cur.execute("UPDATE exchanges SET  time_to = %s, fee_to = %s WHERE id = %s", (transaction["received"].replace("T", " ")[:-5], (transaction["fees"] / 100000000), exchange_id))
+            elif currency == "LTC":
+                transaction = requests.get("https://api.blockcypher.com/v1/ltc/main/txs/" + tx_hash).json()
+                cur.execute("UPDATE exchanges SET  time_to = %s, fee_to = %s WHERE id = %s", (transaction["received"].replace("T", " ")[:-5], (transaction["fees"] / 100000000), exchange_id))
+            elif currency == "ETH Infura":
+                transaction = requests.get("https://api.infura.io/v1/jsonrpc/mainnet/eth_getTransactionByHash?params=%5B%22" + tx_hash + "%22%5D&token=Wh9YuEIhi7tqseXn8550").json()["result"]
+                block = requests.get("https://api.infura.io/v1/jsonrpc/mainnet/eth_getBlockByNumber?params=%5B%22" + str(transaction["blockNumber"]) + "%22%2C%20true%5D&token=Wh9YuEIhi7tqseXn8550").json()["result"]
+                cur.execute("UPDATE exchanges SET  time_to = %s, fee_to = %s WHERE id = %s", (datetime.datetime.utcfromtimestamp(int(block["timestamp"], 16)).strftime('%Y-%m-%d %H:%M:%S'), int(transaction["gas"], 16)*(int(transaction["gasPrice"], 16) / 1E+18), exchange_id))
+        except:
+            change_ip()
+        else:
+            break
+    else:
         print("Counldn't get the corresponding Transaction for " + str(currency))
         traceback.print_exc()
+
+def change_ip():
+    with Controller.from_port(port = 9051) as controller:
+        controller.authenticate()
+        controller.signal(Signal.NEWNYM)
 
 def closeConnection():
     print "Scraper stopped!"
@@ -415,9 +453,7 @@ def get_ethereum_transaction_infura(new_exchanges):
         for number in range(60):
             # Get Block
             # print (str(last_block_number - number))
-            with Controller.from_port(port = 9051) as controller:
-                controller.authenticate()
-                controller.signal(Signal.NEWNYM)
+            change_ip()
             transactions = None
             try:
                 block = requests.get("https://api.infura.io/v1/jsonrpc/mainnet/eth_getBlockByNumber?params=%5B%22" + hex(last_block_number - number) + "%22%2C%20true%5D&token=Wh9YuEIhi7tqseXn8550").json()["result"]
@@ -441,9 +477,7 @@ def get_ethereum_transaction_infura(new_exchanges):
                         # BC1 Tx must happen before SS Tx (SS Tx Time is when money recieved)
                         if exchange["amount"] == int(transaction["value"], 16) / 1E+18 and ((time_exchange - time_block)).total_seconds() > 0:
                             # Change Ip Address
-                            with Controller.from_port(port = 9051) as controller:
-                                controller.authenticate()
-                                controller.signal(Signal.NEWNYM)
+                            change_ip()
                             exchange_details = requests.get("https://shapeshift.io/txStat/" + transaction["to"]).json()
                             if exchange_details["status"] == "complete" and exchange_details["outgoingType"] == exchange[
                                 "curOut"]:
