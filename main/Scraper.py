@@ -12,6 +12,7 @@ from stem.control import Controller
 import sys
 import traceback
 
+
 def main():
     # Create MySQL Tables
     Shapeshift.create_table()
@@ -185,7 +186,7 @@ def get_ethereum_transaction(new_exchanges):
             traceback.print_exc()
             return
 
-        for number in range(60):
+        for number in range(90):
             # Get Block
             # print (str(last_block_number - number))
             change_ip()
@@ -345,7 +346,7 @@ def get_litecoin_transaction(new_exchanges):
             traceback.print_exc()
             return
 
-        for number in range(40):
+        for number in range(60):
             # Get Block
             #print (str(last_block_number - number))
             # Change IP Address after 10 Txs (API Limit)
@@ -406,7 +407,7 @@ def search_corresponding_transaction(currency, tx_hash, exchange_id):
     for attempt in range(5):
         try:
             if currency == "ETH":
-                transaction = requests.get("https://etherchain.org/api/tx/" + tx_hash).json()["data"]
+                transaction = requests.get("https://etherchain.org/api/tx/" + tx_hash).json()["data"][0]
                 cur.execute("UPDATE exchanges SET  time_to = %s, fee_to = %s WHERE id = %s", (transaction["time"].replace("T"," ")[:-5], (transaction["gasUsed"]*(transaction["price"]/ 1E+18)), exchange_id))
             elif currency == "BTC":
                 transaction = requests.get("https://api.blockcypher.com/v1/btc/main/txs/" + tx_hash).json()
