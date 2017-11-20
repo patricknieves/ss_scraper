@@ -186,6 +186,7 @@ def get_ethereum_transaction(new_exchanges):
             with Controller.from_port(port = 9051) as controller:
                 controller.authenticate()
                 controller.signal(Signal.NEWNYM)
+            transactions = None
             try:
                 transactions = requests.get("https://etherchain.org/api/block/" + (str(last_block_number - number)) + "/tx").json()["data"]
             except:
@@ -249,6 +250,7 @@ def get_bitcoin_transaction(new_exchanges):
             with Controller.from_port(port = 9051) as controller:
                 controller.authenticate()
                 controller.signal(Signal.NEWNYM)
+            transactions = None
             try:
                 block = requests.get("https://blockchain.info/de/block-height/" + (str(last_block_number - number)) + "?format=json").json()["blocks"][0]
                 transactions = block["tx"]
@@ -327,6 +329,7 @@ def get_litecoin_transaction(new_exchanges):
             with Controller.from_port(port = 9051) as controller:
                 controller.authenticate()
                 controller.signal(Signal.NEWNYM)
+            transactions = None
             try:
                 block = requests.get("https://chain.so/api/v2/block/LTC/" + (str(last_block_number - number))).json()["data"]
                 transactions = block["txs"]
