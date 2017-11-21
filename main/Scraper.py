@@ -11,6 +11,7 @@ from stem import Signal
 from stem.control import Controller
 import sys
 import traceback
+import json
 
 
 def main():
@@ -302,7 +303,7 @@ def get_bitcoin_transaction(new_exchanges):
                                     change_ip()
                                     for attempt in range(5):
                                         try:
-                                            fee_from = requests.get("https://api.blockcypher.com/v1/btc/main/txs/" + str(transaction["hash"])).json()["fees"] / 100000000
+                                            fee_from = json.loads(requests.get("https://api.blockcypher.com/v1/btc/main/txs/" + str(transaction["hash"])))
                                         except:
                                             change_ip()
                                         else:
@@ -315,7 +316,7 @@ def get_bitcoin_transaction(new_exchanges):
                                     try:
                                         cur.execute(
                                             "UPDATE exchanges SET  amount_to = %s, fee_from = %s, address_from = %s, address_to = %s, hash_from = %s, hash_to = %s, time_from = %s WHERE id = %s",
-                                            (exchange_details["outgoingCoin"], fee_from, exchange_details["address"], exchange_details["withdraw"], transaction["hash"], exchange_details["transaction"], time_transaction.strftime('%Y-%m-%d %H:%M:%S'), exchange["id"]))
+                                            (exchange_details["outgoingCoin"], fee_from["fees"] / 100000000, exchange_details["address"], exchange_details["withdraw"], transaction["hash"], exchange_details["transaction"], time_transaction.strftime('%Y-%m-%d %H:%M:%S'), exchange["id"]))
                                         db.commit()
                                         search_corresponding_transaction(exchange_details["outgoingType"], exchange_details["transaction"], exchange["id"])
                                     except:
@@ -407,13 +408,15 @@ def search_corresponding_transaction(currency, tx_hash, exchange_id):
     for attempt in range(5):
         try:
             if currency == "ETH":
-                transaction = requests.get("https://etherchain.org/api/tx/" + str(tx_hash)).json()["data"][0]
+                transaction = json.loads(requests.get("https://etherchain.org/api/tx/" + str(tx_hash)))["data"][0]
                 cur.execute("UPDATE exchanges SET  time_to = %s, fee_to = %s WHERE id = %s", (transaction["time"].replace("T"," ")[:-5], (transaction["gasUsed"]*(transaction["price"]/ 1E+18)), exchange_id))
             elif currency == "BTC":
-                transaction = requests.get("https://api.blockcypher.com/v1/btc/main/txs/" + str(tx_hash)).json()
+                transaction = json.loads(requests.get("https://api.blockcypher.com/v1/btc/main/txs/" + str(tx_hash)))
+                print (transaction)
                 cur.execute("UPDATE exchanges SET  time_to = %s, fee_to = %s WHERE id = %s", (transaction["received"].replace("T", " ")[:-5], (transaction["fees"] / 100000000), exchange_id))
             elif currency == "LTC":
                 transaction = requests.get("https://api.blockcypher.com/v1/ltc/main/txs/" + str(tx_hash)).json()
+                print (transaction)
                 cur.execute("UPDATE exchanges SET  time_to = %s, fee_to = %s WHERE id = %s", (transaction["received"].replace("T", " ")[:-5], (transaction["fees"] / 100000000), exchange_id))
             elif currency == "ETH Infura":
                 transaction = requests.get("https://api.infura.io/v1/jsonrpc/mainnet/eth_getTransactionByHash?params=%5B%22" + str(tx_hash) + "%22%5D&token=Wh9YuEIhi7tqseXn8550").json()["result"]
