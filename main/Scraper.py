@@ -300,12 +300,13 @@ def get_bitcoin_transaction(new_exchanges):
                                     "curOut"]:
                                     # Get fee_from
                                     change_ip()
-                                    for attempt in range(5):
+                                    for attempt in range(15):
                                         try:
                                             fee_from = requests.get("https://chain.so/api/v2/tx/BTC/" + str(transaction["hash"])).json()["data"]["fee"]
                                             #fee_from = requests.get("https://api.blockcypher.com/v1/btc/main/txs/" + str(transaction["hash"])).json()["fees"] / 100000000
                                         except:
                                             change_ip()
+                                            time.sleep(1)
                                         else:
                                             break
                                     else:
@@ -340,6 +341,7 @@ def get_litecoin_transaction(new_exchanges):
                 last_block_number = requests.get("https://chain.so/api/v2/get_info/LTC").json()["data"]["blocks"]
             except:
                 change_ip()
+                time.sleep(1)
             else:
                 break
         else:
@@ -427,6 +429,7 @@ def search_corresponding_transaction(currency, tx_hash, exchange_id):
             db.commit()
         except:
             change_ip()
+            time.sleep(1)
         else:
             break
     else:
