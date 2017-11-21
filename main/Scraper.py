@@ -11,7 +11,6 @@ from stem import Signal
 from stem.control import Controller
 import sys
 import traceback
-import json
 
 
 def main():
@@ -303,7 +302,7 @@ def get_bitcoin_transaction(new_exchanges):
                                     change_ip()
                                     for attempt in range(5):
                                         try:
-                                            fee_from = json.loads(requests.get("https://api.blockcypher.com/v1/btc/main/txs/" + str(transaction["hash"])))
+                                            fee_from = requests.get("https://api.blockcypher.com/v1/btc/main/txs/" + str(transaction["hash"])).json()
                                         except:
                                             change_ip()
                                         else:
@@ -408,10 +407,10 @@ def search_corresponding_transaction(currency, tx_hash, exchange_id):
     for attempt in range(5):
         try:
             if currency == "ETH":
-                transaction = json.loads(requests.get("https://etherchain.org/api/tx/" + str(tx_hash)))["data"][0]
+                transaction = requests.get("https://etherchain.org/api/tx/" + str(tx_hash)).json()["data"][0]
                 cur.execute("UPDATE exchanges SET  time_to = %s, fee_to = %s WHERE id = %s", (transaction["time"].replace("T"," ")[:-5], (transaction["gasUsed"]*(transaction["price"]/ 1E+18)), exchange_id))
             elif currency == "BTC":
-                transaction = json.loads(requests.get("https://api.blockcypher.com/v1/btc/main/txs/" + str(tx_hash)))
+                transaction = requests.get("https://api.blockcypher.com/v1/btc/main/txs/" + str(tx_hash)).json()
                 print (transaction)
                 cur.execute("UPDATE exchanges SET  time_to = %s, fee_to = %s WHERE id = %s", (transaction["received"].replace("T", " ")[:-5], (transaction["fees"] / 100000000), exchange_id))
             elif currency == "LTC":
