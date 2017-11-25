@@ -9,7 +9,6 @@ import Shapeshift
 import atexit
 from stem import Signal
 from stem.control import Controller
-import sys
 import traceback
 
 
@@ -33,36 +32,41 @@ def main():
 
     while True:
         result = get_last_transactions(previous_exchanges)
-        new_exchanges = result["new_exchanges"]
-        # After every loop: Wait the half of the duration of retrieved 50 Txs
-        duration_to_wait = result["duration"].total_seconds()/2
-        if new_exchanges:
-            print ("Starting loop: " + str(datetime.datetime.now()))
-            start_time = time.time()
+        if result:
+            new_exchanges = result["new_exchanges"]
+            # After every loop: Wait the half of the duration of retrieved 50 Txs
+            duration_to_wait = result["duration"].total_seconds()/2
+            if new_exchanges:
+                print ("Starting loop: " + str(datetime.datetime.now()))
+                start_time = time.time()
 
-            # Update Coinmarketcap data
-            last_time_updated_cmc = update_cmc(last_time_updated_cmc)
-            # Update Shapeshift
-            last_time_updated_ss = update_ssf(last_time_updated_ss)
+                # Update Coinmarketcap data
+                last_time_updated_cmc = update_cmc(last_time_updated_cmc)
+                # Update Shapeshift
+                last_time_updated_ss = update_ssf(last_time_updated_ss)
 
-            previous_exchanges = new_exchanges
+                previous_exchanges = new_exchanges
 
-            print ("Search for Ethereum Txs...")
-            get_ethereum_transaction(new_exchanges)
-            print ("Search for Litecoin Txs...")
-            get_litecoin_transaction(new_exchanges)
-            print ("Search for Bitcoin Txs...")
-            get_bitcoin_transaction(new_exchanges)
-            print ("Finished loop: " + str(datetime.datetime.now()))
-            elapsed_time = time.time() - start_time
-            if elapsed_time < duration_to_wait:
-                print ("Done! Wait " + str(duration_to_wait - elapsed_time) + " seconds")
-                time.sleep(duration_to_wait - elapsed_time)
+                print ("Search for Ethereum Txs...")
+                left_transactions = get_ethereum_transaction(new_exchanges)
+                if left_transactions:
+                    get_ethereum_transaction_infura
+                print ("Search for Litecoin Txs...")
+                get_litecoin_transaction(new_exchanges)
+                print ("Search for Bitcoin Txs...")
+                get_bitcoin_transaction(new_exchanges)
+                print ("Finished loop: " + str(datetime.datetime.now()))
+                elapsed_time = time.time() - start_time
+                if elapsed_time < duration_to_wait:
+                    print ("Done! Wait " + str(duration_to_wait - elapsed_time) + " seconds")
+                    time.sleep(duration_to_wait - elapsed_time)
 
+            else:
+                print ("No Transactions. Wait " + str(duration_to_wait) + " seconds")
+                time.sleep(duration_to_wait)
         else:
-            print ("No Transactions. Wait " + str(duration_to_wait) + " seconds")
-            time.sleep(duration_to_wait)
-
+            print ("Retrieving Transactions from Shapeshift didn't work")
+            time.sleep(180)
 def update_cmc(last_time_updated_cmc):
     # Update Coinmarketcap data every 10 min
     if not last_time_updated_cmc or (time.time() - last_time_updated_cmc) > 600:
@@ -117,55 +121,56 @@ def get_last_transactions(previous_exchanges):
     # Request last 50 Transactions from Shapeshift
     new_exchanges = requests.get("https://shapeshift.io/recenttx/50").json()
 
-    duration = datetime.datetime.utcfromtimestamp(new_exchanges[1]["timestamp"]) - datetime.datetime.utcfromtimestamp(new_exchanges[-1]["timestamp"])
-    print ("Time dif (All): " + str(duration))
-    # Take BTC, ETH and LTC exchanges only
-    filtered_new_exchanges = [exchange for exchange in new_exchanges if
-                              "BTC" == exchange["curIn"] or "ETH" == exchange["curIn"] or "LTC" == exchange["curIn"]]
+    if new_exchanges:
+        duration = datetime.datetime.utcfromtimestamp(new_exchanges[1]["timestamp"]) - datetime.datetime.utcfromtimestamp(new_exchanges[-1]["timestamp"])
+        print ("Time dif (All): " + str(duration))
+        # Take BTC, ETH and LTC exchanges only
+        filtered_new_exchanges = [exchange for exchange in new_exchanges if
+                                  "BTC" == exchange["curIn"] or "ETH" == exchange["curIn"] or "LTC" == exchange["curIn"]]
 
-    # Take new exchanges only
-    if previous_exchanges:
-        i = 0
-        new = True
-        while new is True and i < len(filtered_new_exchanges):
-            new = previous_exchanges[0]["timestamp"] < filtered_new_exchanges[i]["timestamp"] or \
-                  previous_exchanges[0]["timestamp"] == filtered_new_exchanges[i]["timestamp"] and (
-                      previous_exchanges[0]["curIn"] != filtered_new_exchanges[i]["curIn"] or
-                      previous_exchanges[0]["curOut"] !=
-                      filtered_new_exchanges[i]["curOut"] or previous_exchanges[0]["amount"] !=
-                      filtered_new_exchanges[i]["amount"])
-            i = i + 1
-        if new is False and i != 0:
-            count_old = len(filtered_new_exchanges)
-            filtered_new_exchanges = filtered_new_exchanges[:(i - 1)]
-            print (str((count_old - len(filtered_new_exchanges))) + " Txs removed from " + str(count_old))
-        else:
-            print ("Nothing filtered")
+        # Take new exchanges only
+        if previous_exchanges:
+            i = 0
+            new = True
+            while new is True and i < len(filtered_new_exchanges):
+                new = previous_exchanges[0]["timestamp"] < filtered_new_exchanges[i]["timestamp"] or \
+                      previous_exchanges[0]["timestamp"] == filtered_new_exchanges[i]["timestamp"] and (
+                          previous_exchanges[0]["curIn"] != filtered_new_exchanges[i]["curIn"] or
+                          previous_exchanges[0]["curOut"] !=
+                          filtered_new_exchanges[i]["curOut"] or previous_exchanges[0]["amount"] !=
+                          filtered_new_exchanges[i]["amount"])
+                i = i + 1
+            if new is False and i != 0:
+                count_old = len(filtered_new_exchanges)
+                filtered_new_exchanges = filtered_new_exchanges[:(i - 1)]
+                print (str((count_old - len(filtered_new_exchanges))) + " Txs removed from " + str(count_old))
+            else:
+                print ("Nothing filtered")
 
-    # Write data to MySQL DB
-    print ("Insert " + str(len(filtered_new_exchanges)) + " Transactions")
-    for exchange in reversed(filtered_new_exchanges):
-        try:
-            #Get corresponding Shapeshift Fee and Coinmarketcap data
-            cur.execute("SELECT fee FROM shapeshift WHERE symbol = %s", [exchange["curOut"]])
-            fee_exchange = cur.fetchone()[0]
-            cur.execute("SELECT value FROM coinmarketcap WHERE symbol = %s", [exchange["curIn"]])
-            dollarvalue_from = cur.fetchone()[0]
-            cur.execute("SELECT value FROM coinmarketcap WHERE symbol = %s", [exchange["curOut"]])
-            dollarvalue_to = cur.fetchone()[0]
-            cur.execute(
-                "INSERT INTO exchanges (currency_from, currency_to, amount_from, time_exchange, fee_exchange, dollarvalue_from, dollarvalue_to) VALUES (%s, %s, %s, %s, %s, %s, %s)",
-                (exchange["curIn"], exchange["curOut"], exchange["amount"],
-                 datetime.datetime.utcfromtimestamp(exchange["timestamp"]).strftime('%Y-%m-%d %H:%M:%S'), fee_exchange, dollarvalue_from, dollarvalue_to))
-            db.commit()
-            exchange["id"] = cur.lastrowid
-        except:
-            print("Problem saving Transaction. Transaction was deleted")
-            traceback.print_exc()
-            filtered_new_exchanges.remove(exchange)
-            db.rollback()
+        # Write data to MySQL DB
+        print ("Insert " + str(len(filtered_new_exchanges)) + " Transactions")
+        for exchange in reversed(filtered_new_exchanges):
+            try:
+                #Get corresponding Shapeshift Fee and Coinmarketcap data
+                cur.execute("SELECT fee FROM shapeshift WHERE symbol = %s", [exchange["curOut"]])
+                fee_exchange = cur.fetchone()[0]
+                cur.execute("SELECT value FROM coinmarketcap WHERE symbol = %s", [exchange["curIn"]])
+                dollarvalue_from = cur.fetchone()[0]
+                cur.execute("SELECT value FROM coinmarketcap WHERE symbol = %s", [exchange["curOut"]])
+                dollarvalue_to = cur.fetchone()[0]
+                cur.execute(
+                    "INSERT INTO exchanges (currency_from, currency_to, amount_from, time_exchange, fee_exchange, dollarvalue_from, dollarvalue_to) VALUES (%s, %s, %s, %s, %s, %s, %s)",
+                    (exchange["curIn"], exchange["curOut"], exchange["amount"],
+                     datetime.datetime.utcfromtimestamp(exchange["timestamp"]).strftime('%Y-%m-%d %H:%M:%S'), fee_exchange, dollarvalue_from, dollarvalue_to))
+                db.commit()
+                exchange["id"] = cur.lastrowid
+            except:
+                print("Problem saving Transaction. Transaction was deleted")
+                traceback.print_exc()
+                filtered_new_exchanges.remove(exchange)
+                db.rollback()
 
-    return {"new_exchanges": filtered_new_exchanges, "duration": duration}
+        return {"new_exchanges": filtered_new_exchanges, "duration": duration}
 
 
 #Etherchain
@@ -184,7 +189,7 @@ def get_ethereum_transaction(new_exchanges):
         else:
             print("Counldn't get last number of block from Etherchain")
             traceback.print_exc()
-            return
+            return filtered_new__exchanges
 
         for number in range(90):
             # Get Block
@@ -209,7 +214,7 @@ def get_ethereum_transaction(new_exchanges):
                 time_oldest_transaction = datetime.datetime.utcfromtimestamp(filtered_new__exchanges[-1]["timestamp"])
                 time_block = datetime.datetime.strptime(transactions[0]["time"].replace("T","")[:-5],"%Y-%m-%d%H:%M:%S")
                 if ((time_oldest_transaction - time_block)).total_seconds() > 180:
-                    return
+                    return filtered_new__exchanges
 
                 for transaction in transactions:
                     for exchange in filtered_new__exchanges:
@@ -227,6 +232,81 @@ def get_ethereum_transaction(new_exchanges):
                                     cur.execute(
                                         "UPDATE exchanges SET amount_to=%s, fee_from=%s, address_from=%s, address_to=%s, hash_from=%s, hash_to=%s, time_from=%s WHERE id=%s",
                                         (exchange_details["outgoingCoin"],(transaction["gasUsed"]*(transaction["price"]/ 1E+18)),exchange_details["address"],exchange_details["withdraw"],transaction["hash"],exchange_details["transaction"],transaction["time"].replace("T"," ")[:-5],exchange["id"]))
+                                    db.commit()
+                                    search_corresponding_transaction(exchange_details["outgoingType"], exchange_details["transaction"], exchange["id"])
+                                except:
+                                    print("Problem updating found Transaction for: " + str(exchange["curIn"] + " " + str(exchange_details["address"])))
+                                    traceback.print_exc()
+                                    db.rollback()
+
+                                # Not deleting, cause might to found with infura
+                                #filtered_new__exchanges.remove(exchange)
+
+                                # Quit search if no more new exchanges
+                                if not filtered_new__exchanges:
+                                    return filtered_new__exchanges
+                                # Search in next transaction
+                                break
+    return filtered_new__exchanges
+
+#Infura (Doesn't work so well because of API Key)
+def get_ethereum_transaction_infura(new_exchanges):
+    # Take ETH exchanges only
+    filtered_new__exchanges = [exchange for exchange in new_exchanges if "ETH" == exchange["curIn"]]
+    if filtered_new__exchanges:
+        # Request last block number
+        for attempt in range(10):
+            try:
+                last_block_number = int(requests.get("https://api.infura.io/v1/jsonrpc/mainnet/eth_blockNumber?token=Wh9YuEIhi7tqseXn8550").json()["result"], 16)
+            except:
+                change_ip()
+            else:
+                break
+        else:
+            print("Counldn't get last number of block from Infura")
+            traceback.print_exc()
+            return
+        for number in range(60):
+            # Get Block
+            # print (str(last_block_number - number))
+            change_ip()
+            transactions = None
+
+            for attempt in range(5):
+                try:
+                    block = requests.get("https://api.infura.io/v1/jsonrpc/mainnet/eth_getBlockByNumber?params=%5B%22" + hex(last_block_number - number) + "%22%2C%20true%5D&token=Wh9YuEIhi7tqseXn8550").json()["result"]
+                    transactions = block["transactions"]
+                except:
+                    change_ip()
+                else:
+                    break
+            else:
+                print("Counldn't get block from Etherchain: " + str(last_block_number - number))
+                traceback.print_exc()
+                pass
+
+            if transactions:
+                # Check if Block much older than Exchanges
+                time_oldest_transaction = datetime.datetime.utcfromtimestamp(filtered_new__exchanges[-1]["timestamp"])
+                time_block = datetime.datetime.utcfromtimestamp(int(block["timestamp"], 16))
+                if ((time_oldest_transaction - time_block)).total_seconds() > 180:
+                    return
+
+                for transaction in transactions:
+                    for exchange in filtered_new__exchanges:
+                        time_exchange = datetime.datetime.utcfromtimestamp(exchange["timestamp"])
+                        # BC1 Tx must happen before SS Tx (SS Tx Time is when money recieved)
+                        if exchange["amount"] == int(transaction["value"], 16) / 1E+18 and ((time_exchange - time_block)).total_seconds() > 0:
+                            # Change Ip Address
+                            change_ip()
+                            exchange_details = requests.get("https://shapeshift.io/txStat/" + transaction["to"]).json()
+                            if exchange_details["status"] == "complete" and exchange_details["outgoingType"] == exchange[
+                                "curOut"]:
+                                # Update DB
+                                try:
+                                    cur.execute(
+                                        "UPDATE exchanges SET amount_to = %s, fee_from = %s, address_from = %s, address_to = %s, hash_from = %s, hash_to = %s, time_from = %s WHERE id = %s",
+                                        (exchange_details["outgoingCoin"], int(transaction["gas"], 16)*(int(transaction["gasPrice"], 16) / 1E+18), exchange_details["address"], exchange_details["withdraw"], transaction["hash"], exchange_details["transaction"], time_block.strftime('%Y-%m-%d %H:%M:%S'), exchange["id"]))
                                     db.commit()
                                     search_corresponding_transaction(exchange_details["outgoingType"], exchange_details["transaction"], exchange["id"])
                                 except:
@@ -300,19 +380,25 @@ def get_bitcoin_transaction(new_exchanges):
                                     "curOut"]:
                                     # Get fee_from
                                     change_ip()
-                                    for attempt in range(15):
+                                    for attempt in range(5):
                                         try:
                                             fee_from = requests.get("https://chain.so/api/v2/tx/BTC/" + str(transaction["hash"])).json()["data"]["fee"]
-                                            #fee_from = requests.get("https://api.blockcypher.com/v1/btc/main/txs/" + str(transaction["hash"])).json()["fees"] / 100000000
                                         except:
                                             change_ip()
-                                            time.sleep(1)
                                         else:
                                             break
                                     else:
-                                        print("Counldn't get fee from blockcypher: " + str(transaction["hash"]))
-                                        traceback.print_exc()
-                                        pass
+                                        for attempt in range(5):
+                                            try:
+                                                fee_from = requests.get("https://api.blockcypher.com/v1/btc/main/txs/" + str(transaction["hash"])).json()["fees"] / 100000000
+                                            except:
+                                                change_ip()
+                                            else:
+                                                break
+                                        else:
+                                            print("Counldn't get fee for BTC: " + str(transaction["hash"]))
+                                            traceback.print_exc()
+                                            pass
                                     # Update DB
                                     try:
                                         cur.execute(
@@ -325,6 +411,7 @@ def get_bitcoin_transaction(new_exchanges):
                                         traceback.print_exc()
                                         db.rollback()
                                     filtered_new__exchanges.remove(exchange)
+
                                     # Quit search if no more new exchanges
                                     if not filtered_new__exchanges:
                                         return
@@ -341,7 +428,6 @@ def get_litecoin_transaction(new_exchanges):
                 last_block_number = requests.get("https://chain.so/api/v2/get_info/LTC").json()["data"]["blocks"]
             except:
                 change_ip()
-                time.sleep(1)
             else:
                 break
         else:
@@ -351,8 +437,6 @@ def get_litecoin_transaction(new_exchanges):
 
         for number in range(60):
             # Get Block
-            #print (str(last_block_number - number))
-            # Change IP Address after 10 Txs (API Limit)
             #if (number%10 == 9):
             change_ip()
             transactions = None
@@ -413,13 +497,9 @@ def search_corresponding_transaction(currency, tx_hash, exchange_id):
                 transaction = requests.get("https://etherchain.org/api/tx/" + str(tx_hash)).json()["data"][0]
                 cur.execute("UPDATE exchanges SET  time_to = %s, fee_to = %s WHERE id = %s", (transaction["time"].replace("T"," ")[:-5], (transaction["gasUsed"]*(transaction["price"]/ 1E+18)), exchange_id))
             elif currency == "BTC":
-                #transaction = requests.get("https://api.blockcypher.com/v1/btc/main/txs/" + str(tx_hash)).json()
-                #cur.execute("UPDATE exchanges SET  time_to = %s, fee_to = %s WHERE id = %s", (transaction["received"].replace("T", " ")[:-5], (transaction["fees"] / 100000000), exchange_id))
                 transaction = requests.get("https://chain.so/api/v2/tx/BTC/" + str(tx_hash)).json()["data"]
                 cur.execute("UPDATE exchanges SET  time_to = %s, fee_to = %s WHERE id = %s", (datetime.datetime.utcfromtimestamp(transaction["time"]).strftime('%Y-%m-%d %H:%M:%S'), transaction["fee"], exchange_id))
             elif currency == "LTC":
-                #transaction = requests.get("https://api.blockcypher.com/v1/ltc/main/txs/" + str(tx_hash)).json()
-                #cur.execute("UPDATE exchanges SET  time_to = %s, fee_to = %s WHERE id = %s", (transaction["received"].replace("T", " ")[:-5], (transaction["fees"] / 100000000), exchange_id))
                 transaction = requests.get("https://chain.so/api/v2/tx/LTC/" + str(tx_hash)).json()["data"]
                 cur.execute("UPDATE exchanges SET  time_to = %s, fee_to = %s WHERE id = %s", (datetime.datetime.utcfromtimestamp(transaction["time"]).strftime('%Y-%m-%d %H:%M:%S'), transaction["fee"], exchange_id))
             elif currency == "ETH Infura":
@@ -429,7 +509,27 @@ def search_corresponding_transaction(currency, tx_hash, exchange_id):
             db.commit()
         except:
             change_ip()
-            time.sleep(1)
+        else:
+            break
+    else:
+        search_corresponding_transaction2(currency, tx_hash, exchange_id)
+
+def search_corresponding_transaction2(currency, tx_hash, exchange_id):
+    for attempt in range(5):
+        try:
+            if currency == "ETH":
+                transaction = requests.get("https://api.infura.io/v1/jsonrpc/mainnet/eth_getTransactionByHash?params=%5B%22" + str(tx_hash) + "%22%5D&token=Wh9YuEIhi7tqseXn8550").json()["result"]
+                block = requests.get("https://api.infura.io/v1/jsonrpc/mainnet/eth_getBlockByNumber?params=%5B%22" + str(transaction["blockNumber"]) + "%22%2C%20true%5D&token=Wh9YuEIhi7tqseXn8550").json()["result"]
+                cur.execute("UPDATE exchanges SET  time_to = %s, fee_to = %s WHERE id = %s", (datetime.datetime.utcfromtimestamp(int(block["timestamp"], 16)).strftime('%Y-%m-%d %H:%M:%S'), int(transaction["gas"], 16)*(int(transaction["gasPrice"], 16) / 1E+18), exchange_id))
+            elif currency == "BTC":
+                transaction = requests.get("https://api.blockcypher.com/v1/btc/main/txs/" + str(tx_hash)).json()
+                cur.execute("UPDATE exchanges SET  time_to = %s, fee_to = %s WHERE id = %s", (transaction["received"].replace("T", " ")[:-5], (transaction["fees"] / 100000000), exchange_id))
+            elif currency == "LTC":
+                transaction = requests.get("https://api.blockcypher.com/v1/ltc/main/txs/" + str(tx_hash)).json()
+                cur.execute("UPDATE exchanges SET  time_to = %s, fee_to = %s WHERE id = %s", (transaction["received"].replace("T", " ")[:-5], (transaction["fees"] / 100000000), exchange_id))
+            db.commit()
+        except:
+            change_ip()
         else:
             break
     else:
@@ -452,54 +552,3 @@ cur = db.cursor()
 atexit.register(closeConnection)
 
 if __name__ == "__main__": main()
-
-#Infura (Doesn't work because of API Key)
-def get_ethereum_transaction_infura(new_exchanges):
-    # Take ETH exchanges only
-    filtered_new__exchanges = [exchange for exchange in new_exchanges if "ETH" == exchange["curIn"]]
-    if filtered_new__exchanges:
-        # Request last block number
-        last_block_number = int(requests.get("https://api.infura.io/v1/jsonrpc/mainnet/eth_blockNumber?token=Wh9YuEIhi7tqseXn8550").json()["result"], 16)
-        for number in range(60):
-            # Get Block
-            # print (str(last_block_number - number))
-            change_ip()
-            transactions = None
-            try:
-                block = requests.get("https://api.infura.io/v1/jsonrpc/mainnet/eth_getBlockByNumber?params=%5B%22" + hex(last_block_number - number) + "%22%2C%20true%5D&token=Wh9YuEIhi7tqseXn8550").json()["result"]
-                transactions = block["transactions"]
-            except:
-                print ("Failed --------------------------------------------------------------")
-                print ("Failed at Blocknumber: " + str(last_block_number - number))
-                print ("Failed at Blocknumber Hex: " + hex(last_block_number - number))
-                print("Unexpected error:", sys.exc_info()[0])
-                #sys.exit(0)
-            if transactions:
-                # Check if Block much older than Exchanges
-                time_oldest_transaction = datetime.datetime.utcfromtimestamp(filtered_new__exchanges[-1]["timestamp"])
-                time_block = datetime.datetime.utcfromtimestamp(int(block["timestamp"], 16))
-                if ((time_oldest_transaction - time_block)).total_seconds() > 180:
-                    return
-
-                for transaction in transactions:
-                    for exchange in filtered_new__exchanges:
-                        time_exchange = datetime.datetime.utcfromtimestamp(exchange["timestamp"])
-                        # BC1 Tx must happen before SS Tx (SS Tx Time is when money recieved)
-                        if exchange["amount"] == int(transaction["value"], 16) / 1E+18 and ((time_exchange - time_block)).total_seconds() > 0:
-                            # Change Ip Address
-                            change_ip()
-                            exchange_details = requests.get("https://shapeshift.io/txStat/" + transaction["to"]).json()
-                            if exchange_details["status"] == "complete" and exchange_details["outgoingType"] == exchange[
-                                "curOut"]:
-                                # Update DB
-                                cur.execute(
-                                    "UPDATE exchanges SET amount_to = %s, fee_from = %s, address_from = %s, address_to = %s, hash_from = %s, hash_to = %s, time_from = %s WHERE id = %s",
-                                    (exchange_details["outgoingCoin"], int(transaction["gas"], 16)*(int(transaction["gasPrice"], 16) / 1E+18), exchange_details["address"], exchange_details["withdraw"], transaction["hash"], exchange_details["transaction"], time_block.strftime('%Y-%m-%d %H:%M:%S'), exchange["id"]))
-                                db.commit()
-                                search_corresponding_transaction(exchange_details["outgoingType"], exchange_details["transaction"], exchange["id"])
-                                filtered_new__exchanges.remove(exchange)
-                                # Quit search if no more new exchanges
-                                if not filtered_new__exchanges:
-                                    return
-                                # Search in next transaction
-                                break
