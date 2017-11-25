@@ -16,16 +16,14 @@ def main():
     Database_manager.create_table_exchanges()
 
     previous_exchanges = []
-    last_time_updated_cmc = None
-    last_time_updated_ss = None
 
     # Dalete all data from DB
     Database_manager.delete_all_data()
 
     # Update Coinmarketcap data
-    last_time_updated_cmc = update_cmc(last_time_updated_cmc)
+    last_time_updated_cmc = update_cmc(None)
     # Update Shapeshift
-    last_time_updated_ss = update_ssf(last_time_updated_ss)
+    last_time_updated_ss = update_ssf(None)
 
     while True:
         result = Shapeshift.get_last_transactions(previous_exchanges)
