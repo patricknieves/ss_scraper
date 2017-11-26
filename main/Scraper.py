@@ -43,13 +43,19 @@ def main():
                 previous_exchanges = new_exchanges
 
                 print ("Search for Ethereum Txs...")
-                left_transactions = Ether.get_ethereum_transaction(new_exchanges)
-                if left_transactions:
-                    Ether.get_ethereum_transaction_infura(left_transactions)
+                left_transactions_eth = Ether.get_ethereum_transaction(new_exchanges)
+                if left_transactions_eth:
+                    Ether.get_ethereum_transaction_infura(left_transactions_eth)
                 print ("Search for Litecoin Txs...")
-                Litecoin.get_litecoin_transaction(new_exchanges)
+                left_transactions_ltc = Litecoin.get_litecoin_transaction(new_exchanges)
+                if left_transactions_ltc:
+                    time.sleep(30)
+                    Litecoin.get_litecoin_transaction(left_transactions_ltc)
                 print ("Search for Bitcoin Txs...")
-                Bitcoin.get_bitcoin_transaction(new_exchanges)
+                left_transactions_btc = Bitcoin.get_bitcoin_transaction(new_exchanges)
+                if left_transactions_btc:
+                    time.sleep(30)
+                    Bitcoin.get_bitcoin_transaction(left_transactions_btc)
                 print ("Finished loop: " + str(datetime.datetime.now()))
                 elapsed_time = time.time() - start_time
                 if elapsed_time < duration_to_wait:

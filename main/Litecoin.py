@@ -7,6 +7,7 @@ import Tor
 import Corresponding_tx
 
 
+#Search with Chain.so
 def get_litecoin_transaction(new_exchanges):
     # Take ETH exchanges only
     filtered_new__exchanges = [exchange for exchange in new_exchanges if "LTC" == exchange["curIn"]]
@@ -36,7 +37,6 @@ def get_litecoin_transaction(new_exchanges):
             # Get Block
             #if (number%10 == 9):
             Tor.change_ip()
-            transactions = None
             for attempt in range(5):
                 try:
                     block = requests.get("https://chain.so/api/v2/block/LTC/" + (str(last_block_number - number))).json()["data"]
@@ -48,7 +48,8 @@ def get_litecoin_transaction(new_exchanges):
             else:
                 print("Counldn't get block from Chain.so: " + str(last_block_number - number))
                 traceback.print_exc()
-                pass
+                return
+                #pass
 
             if transactions:
                 # Check if Block much older than Exchanges
