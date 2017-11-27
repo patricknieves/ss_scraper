@@ -22,7 +22,7 @@ def get_bitcoin_transaction(new_exchanges):
         else:
             print("Counldn't get last number of block from Blockchain")
             traceback.print_exc()
-            return
+            return filtered_new__exchanges
 
         for number in range(5):
             # Get Block
@@ -48,7 +48,7 @@ def get_bitcoin_transaction(new_exchanges):
                 time_block = datetime.datetime.utcfromtimestamp(block["time"])
                 # For Bitcoin not useful maybe bacause very old Tx can be in new Block as Blocks are mined sometimes after 1 hour
                 if ((time_oldest_transaction - time_block)).total_seconds() > 900:
-                    return
+                    return filtered_new__exchanges
 
                 for transaction in transactions:
                     for out in transaction["out"]:
@@ -99,6 +99,7 @@ def get_bitcoin_transaction(new_exchanges):
 
                                     # Quit search if no more new exchanges
                                     if not filtered_new__exchanges:
-                                        return
+                                        return filtered_new__exchanges
                                     # Search in next transaction
                                     break
+    return filtered_new__exchanges

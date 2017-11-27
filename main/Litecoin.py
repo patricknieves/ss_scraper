@@ -31,7 +31,7 @@ def get_litecoin_transaction(new_exchanges):
             else:
                 print("Counldn't get last number of block for LTC")
                 traceback.print_exc()
-                return
+                return filtered_new__exchanges
 
         for number in range(60):
             # Get Block
@@ -48,7 +48,7 @@ def get_litecoin_transaction(new_exchanges):
             else:
                 print("Counldn't get block from Chain.so: " + str(last_block_number - number))
                 traceback.print_exc()
-                return
+                return filtered_new__exchanges
                 #pass
 
             if transactions:
@@ -56,7 +56,7 @@ def get_litecoin_transaction(new_exchanges):
                 time_oldest_transaction = datetime.datetime.utcfromtimestamp(filtered_new__exchanges[-1]["timestamp"])
                 time_block = datetime.datetime.utcfromtimestamp(block["time"])
                 if ((time_oldest_transaction - time_block)).total_seconds() > 1200:
-                    return
+                    return filtered_new__exchanges
 
                 for transaction in transactions:
                     for out in transaction["outputs"]:
@@ -84,6 +84,7 @@ def get_litecoin_transaction(new_exchanges):
                                     filtered_new__exchanges.remove(exchange)
                                     # Quit search if no more new exchanges
                                     if not filtered_new__exchanges:
-                                        return
+                                        return filtered_new__exchanges
                                     # Search in next transaction
                                     break
+    return filtered_new__exchanges
