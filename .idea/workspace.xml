@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f62b2653-b562-4636-bf1d-62fa701dfeb5" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/Bitcoin.py" afterPath="$PROJECT_DIR$/main/Bitcoin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/Litecoin.py" afterPath="$PROJECT_DIR$/main/Litecoin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/Scraper.py" afterPath="$PROJECT_DIR$/main/Scraper.py" />
     </list>
     <ignored path="Scraper.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,14 +47,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="Bitcoin.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Bitcoin.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/Bitcoin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="535">
-              <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+            <state relative-caret-position="150">
+              <caret line="49" column="50" lean-forward="true" selection-start-line="49" selection-start-column="50" selection-end-line="49" selection-end-column="50" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
-                <marker date="1511741188776" expanded="true" signature="4692:4839" ph="UPDATE excha... " />
+                <marker date="1511955264794" expanded="true" signature="4693:4840" ph="UPDATE excha... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Database_manager.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/Database_manager.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+                <marker date="1511628563272" expanded="true" signature="496:1464" ph="CREATE TABLE... IF" />
+                <marker date="1511628563272" expanded="true" signature="1629:1743" ph="CREATE TABLE... IF" />
+                <marker date="1511628563272" expanded="true" signature="1916:2030" ph="CREATE TABLE... IF" />
               </folding>
             </state>
           </provider>
@@ -62,8 +78,8 @@
       <file leaf-file-name="Ether.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/Ether.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1743">
-              <caret line="83" column="4" lean-forward="true" selection-start-line="83" selection-start-column="4" selection-end-line="83" selection-end-column="34" />
+            <state relative-caret-position="952">
+              <caret line="83" column="4" lean-forward="false" selection-start-line="83" selection-start-column="4" selection-end-line="83" selection-end-column="34" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
                 <marker date="1511628944040" expanded="true" signature="2984:3114" ph="UPDATE excha... " />
@@ -76,8 +92,8 @@
       <file leaf-file-name="Litecoin.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/Litecoin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="679">
-              <caret line="89" column="4" lean-forward="true" selection-start-line="89" selection-start-column="4" selection-end-line="89" selection-end-column="34" />
+            <state relative-caret-position="813">
+              <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
                 <marker date="1511741169145" expanded="true" signature="3335:3482" ph="UPDATE excha... " />
@@ -86,11 +102,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Scraper.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Scraper.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/Scraper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="56" column="34" lean-forward="true" selection-start-line="56" selection-start-column="34" selection-end-line="56" selection-end-column="34" />
+            <state relative-caret-position="612">
+              <caret line="51" column="34" lean-forward="true" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -152,9 +168,9 @@
         <option value="$PROJECT_DIR$/main/Corresponding_tx.py" />
         <option value="$PROJECT_DIR$/main/Shapeshift.py" />
         <option value="$PROJECT_DIR$/main/Coinmarketcap.py" />
-        <option value="$PROJECT_DIR$/main/Scraper.py" />
         <option value="$PROJECT_DIR$/main/Litecoin.py" />
         <option value="$PROJECT_DIR$/main/Bitcoin.py" />
+        <option value="$PROJECT_DIR$/main/Scraper.py" />
       </list>
     </option>
   </component>
@@ -165,10 +181,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1098" />
+    <option name="x" value="1912" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -207,6 +223,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
@@ -224,9 +243,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -989,15 +1005,16 @@
       <workItem from="1511040429288" duration="52000" />
       <workItem from="1511041466255" duration="32074000" />
       <workItem from="1511476628606" duration="1238000" />
-      <workItem from="1511617001898" duration="14296000" />
+      <workItem from="1511617001898" duration="15914000" />
+      <workItem from="1511880290445" duration="8403000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="170683000" />
+    <option name="totallyTimeSpent" value="180704000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1007,14 +1024,13 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.06681035" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.08933718" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12916666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0546875" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1028,6 +1044,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286638" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1067,7 +1084,7 @@
         <state relative-caret-position="189">
           <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#0#14#0" expanded="false" />
             <marker date="1511629361614" expanded="true" signature="2118:2162" ph="SELECT fee F... shapeshift" />
             <marker date="1511629361614" expanded="true" signature="2299:2348" ph="SELECT value... coinmarketcap" />
             <marker date="1511629361614" expanded="true" signature="2488:2537" ph="SELECT value... coinmarketcap" />
@@ -1082,7 +1099,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1102,7 +1121,7 @@
         <state relative-caret-position="63">
           <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#0#14#0" expanded="false" />
             <marker date="1511629361614" expanded="true" signature="2118:2162" ph="SELECT fee F... shapeshift" />
             <marker date="1511629361614" expanded="true" signature="2299:2348" ph="SELECT value... coinmarketcap" />
             <marker date="1511629361614" expanded="true" signature="2488:2537" ph="SELECT value... coinmarketcap" />
@@ -1117,7 +1136,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4683">
           <caret line="223" column="137" lean-forward="false" selection-start-line="223" selection-start-column="137" selection-end-line="223" selection-end-column="137" />
-          <folding />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1137,7 +1158,7 @@
         <state relative-caret-position="63">
           <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#0#14#0" expanded="false" />
             <marker date="1511629361614" expanded="true" signature="2118:2162" ph="SELECT fee F... shapeshift" />
             <marker date="1511629361614" expanded="true" signature="2299:2348" ph="SELECT value... coinmarketcap" />
             <marker date="1511629361614" expanded="true" signature="2488:2537" ph="SELECT value... coinmarketcap" />
@@ -1152,7 +1173,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4284">
           <caret line="204" column="65" lean-forward="true" selection-start-line="204" selection-start-column="65" selection-end-line="204" selection-end-column="65" />
-          <folding />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1171,7 +1194,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6384">
           <caret line="314" column="0" lean-forward="false" selection-start-line="314" selection-start-column="0" selection-end-line="314" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1180,7 +1205,7 @@
         <state relative-caret-position="63">
           <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#0#14#0" expanded="false" />
             <marker date="1511629361614" expanded="true" signature="2118:2162" ph="SELECT fee F... shapeshift" />
             <marker date="1511629361614" expanded="true" signature="2299:2348" ph="SELECT value... coinmarketcap" />
             <marker date="1511629361614" expanded="true" signature="2488:2537" ph="SELECT value... coinmarketcap" />
@@ -1207,7 +1232,7 @@
         <state relative-caret-position="63">
           <caret line="4" column="136" lean-forward="true" selection-start-line="4" selection-start-column="124" selection-end-line="4" selection-end-column="136" />
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#0#14#0" expanded="false" />
             <marker date="1511629361614" expanded="true" signature="2118:2162" ph="SELECT fee F... shapeshift" />
             <marker date="1511629361614" expanded="true" signature="2299:2348" ph="SELECT value... coinmarketcap" />
             <marker date="1511629361614" expanded="true" signature="2488:2537" ph="SELECT value... coinmarketcap" />
@@ -1222,7 +1247,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
           <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1242,7 +1269,7 @@
         <state relative-caret-position="126">
           <caret line="7" column="14" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="7" selection-end-column="14" />
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#0#14#0" expanded="false" />
             <marker date="1511629361614" expanded="true" signature="2118:2162" ph="SELECT fee F... shapeshift" />
             <marker date="1511629361614" expanded="true" signature="2299:2348" ph="SELECT value... coinmarketcap" />
             <marker date="1511629361614" expanded="true" signature="2488:2537" ph="SELECT value... coinmarketcap" />
@@ -1257,7 +1284,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="16" column="28" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
-          <folding />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1277,7 +1306,7 @@
         <state relative-caret-position="126">
           <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="14" />
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#0#14#0" expanded="false" />
             <marker date="1511629361614" expanded="true" signature="2118:2162" ph="SELECT fee F... shapeshift" />
             <marker date="1511629361614" expanded="true" signature="2299:2348" ph="SELECT value... coinmarketcap" />
             <marker date="1511629361614" expanded="true" signature="2488:2537" ph="SELECT value... coinmarketcap" />
@@ -1292,7 +1321,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1312,7 +1343,7 @@
         <state relative-caret-position="126">
           <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="14" />
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#0#14#0" expanded="false" />
             <marker date="1511629361614" expanded="true" signature="2118:2162" ph="SELECT fee F... shapeshift" />
             <marker date="1511629361614" expanded="true" signature="2299:2348" ph="SELECT value... coinmarketcap" />
             <marker date="1511629361614" expanded="true" signature="2488:2537" ph="SELECT value... coinmarketcap" />
@@ -1327,7 +1358,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1347,7 +1380,7 @@
         <state relative-caret-position="462">
           <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#0#14#0" expanded="false" />
             <marker date="1511629361614" expanded="true" signature="2118:2162" ph="SELECT fee F... shapeshift" />
             <marker date="1511629361614" expanded="true" signature="2299:2348" ph="SELECT value... coinmarketcap" />
             <marker date="1511629361614" expanded="true" signature="2488:2537" ph="SELECT value... coinmarketcap" />
@@ -1362,7 +1395,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2520">
           <caret line="127" column="70" lean-forward="true" selection-start-line="127" selection-start-column="70" selection-end-line="127" selection-end-column="70" />
-          <folding />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1371,7 +1406,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#0#14#0" expanded="false" />
             <marker date="1511629361614" expanded="true" signature="2118:2162" ph="SELECT fee F... shapeshift" />
             <marker date="1511629361614" expanded="true" signature="2299:2348" ph="SELECT value... coinmarketcap" />
             <marker date="1511629361614" expanded="true" signature="2488:2537" ph="SELECT value... coinmarketcap" />
@@ -1387,7 +1422,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#0#14#0" expanded="false" />
             <marker date="1511629361614" expanded="true" signature="2118:2162" ph="SELECT fee F... shapeshift" />
             <marker date="1511629361614" expanded="true" signature="2299:2348" ph="SELECT value... coinmarketcap" />
             <marker date="1511629361614" expanded="true" signature="2488:2537" ph="SELECT value... coinmarketcap" />
@@ -1403,7 +1438,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#0#14#0" expanded="false" />
             <marker date="1511629361614" expanded="true" signature="2118:2162" ph="SELECT fee F... shapeshift" />
             <marker date="1511629361614" expanded="true" signature="2299:2348" ph="SELECT value... coinmarketcap" />
             <marker date="1511629361614" expanded="true" signature="2488:2537" ph="SELECT value... coinmarketcap" />
@@ -1419,7 +1454,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#0#14#0" expanded="false" />
             <marker date="1511629361614" expanded="true" signature="2118:2162" ph="SELECT fee F... shapeshift" />
             <marker date="1511629361614" expanded="true" signature="2299:2348" ph="SELECT value... coinmarketcap" />
             <marker date="1511629361614" expanded="true" signature="2488:2537" ph="SELECT value... coinmarketcap" />
@@ -1431,13 +1466,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main/Car.py" />
-    <entry file="file://$PROJECT_DIR$/main/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/main/__init__.py" />
     <entry file="file://$PROJECT_DIR$/main/Coinmarketcap.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1500,19 +1529,12 @@
         <state relative-caret-position="126">
           <caret line="6" column="28" lean-forward="true" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
           <folding>
-            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#0#23#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/main/__init__.py" />
     <entry file="file://$PROJECT_DIR$/main/Corresponding_tx.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
@@ -1539,25 +1561,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/Database_manager.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-            <marker date="1511628563272" expanded="true" signature="496:1464" ph="CREATE TABLE... IF" />
-            <marker date="1511628563272" expanded="true" signature="1629:1743" ph="CREATE TABLE... IF" />
-            <marker date="1511628563272" expanded="true" signature="1916:2030" ph="CREATE TABLE... IF" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/Shapeshift.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="693">
           <caret line="81" column="46" lean-forward="false" selection-start-line="81" selection-start-column="46" selection-end-line="81" selection-end-column="46" />
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#0#14#0" expanded="false" />
             <marker date="1511629361614" expanded="true" signature="2118:2162" ph="SELECT fee F... shapeshift" />
             <marker date="1511629361614" expanded="true" signature="2299:2348" ph="SELECT value... coinmarketcap" />
             <marker date="1511629361614" expanded="true" signature="2488:2537" ph="SELECT value... coinmarketcap" />
@@ -1568,20 +1577,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/Scraper.py">
+    <entry file="file://$PROJECT_DIR$/main/Database_manager.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="56" column="34" lean-forward="true" selection-start-line="56" selection-start-column="34" selection-end-line="56" selection-end-column="34" />
+        <state relative-caret-position="119">
+          <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#0#14#0" expanded="true" />
+            <marker date="1511628563272" expanded="true" signature="496:1464" ph="CREATE TABLE... IF" />
+            <marker date="1511628563272" expanded="true" signature="1629:1743" ph="CREATE TABLE... IF" />
+            <marker date="1511628563272" expanded="true" signature="1916:2030" ph="CREATE TABLE... IF" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main/Ether.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1743">
-          <caret line="83" column="4" lean-forward="true" selection-start-line="83" selection-start-column="4" selection-end-line="83" selection-end-column="34" />
+        <state relative-caret-position="952">
+          <caret line="83" column="4" lean-forward="false" selection-start-line="83" selection-start-column="4" selection-end-line="83" selection-end-column="34" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
             <marker date="1511628944040" expanded="true" signature="2984:3114" ph="UPDATE excha... " />
@@ -1590,10 +1602,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main/Bitcoin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="49" column="50" lean-forward="true" selection-start-line="49" selection-start-column="50" selection-end-line="49" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+            <marker date="1511955264794" expanded="true" signature="4693:4840" ph="UPDATE excha... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main/Litecoin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="679">
-          <caret line="89" column="4" lean-forward="true" selection-start-line="89" selection-start-column="4" selection-end-line="89" selection-end-column="34" />
+        <state relative-caret-position="813">
+          <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
             <marker date="1511741169145" expanded="true" signature="3335:3482" ph="UPDATE excha... " />
@@ -1601,13 +1624,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/Bitcoin.py">
+    <entry file="file://$PROJECT_DIR$/main/Scraper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+        <state relative-caret-position="612">
+          <caret line="51" column="34" lean-forward="true" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
-            <marker date="1511741188776" expanded="true" signature="4692:4839" ph="UPDATE excha... " />
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>

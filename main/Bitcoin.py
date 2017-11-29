@@ -24,7 +24,7 @@ def get_bitcoin_transaction(new_exchanges):
             traceback.print_exc()
             return filtered_new__exchanges
 
-        for number in range(5):
+        for number in range(10):
             # Get Block
             # print (str(last_block_number - number))
             Tor.change_ip()

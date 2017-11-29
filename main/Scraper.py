@@ -49,12 +49,12 @@ def main():
                 print ("Search for Litecoin Txs...")
                 left_transactions_ltc = Litecoin.get_litecoin_transaction(new_exchanges)
                 if left_transactions_ltc:
-                    time.sleep(30)
+                    time.sleep(50)
                     Litecoin.get_litecoin_transaction(left_transactions_ltc)
                 print ("Search for Bitcoin Txs...")
                 left_transactions_btc = Bitcoin.get_bitcoin_transaction(new_exchanges)
                 if left_transactions_btc:
-                    time.sleep(30)
+                    #time.sleep(30)
                     Bitcoin.get_bitcoin_transaction(left_transactions_btc)
                 print ("Finished loop: " + str(datetime.datetime.now()))
                 elapsed_time = time.time() - start_time
