@@ -35,6 +35,7 @@ def create_table_exchanges():
                 "time_from datetime DEFAULT NULL,"
                 "time_to datetime DEFAULT NULL,"
                 "time_exchange datetime DEFAULT NULL,"
+                "block_nr int(11) DEFAULT NULL,"
                 "dollarvalue_from float DEFAULT NULL,"
                 "dollarvalue_to float DEFAULT NULL,"
                 "PRIMARY KEY (id))")

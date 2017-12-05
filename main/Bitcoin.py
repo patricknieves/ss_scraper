@@ -87,8 +87,8 @@ def get_bitcoin_transaction(new_exchanges):
                                     # Update DB
                                     try:
                                         Database_manager.cur.execute(
-                                            "UPDATE exchanges SET  amount_to = %s, fee_from = %s, address_from = %s, address_to = %s, hash_from = %s, hash_to = %s, time_from = %s WHERE id = %s",
-                                            (exchange_details["outgoingCoin"], fee_from, exchange_details["address"], exchange_details["withdraw"], transaction["hash"], exchange_details["transaction"], time_transaction.strftime('%Y-%m-%d %H:%M:%S'), exchange["id"]))
+                                            "UPDATE exchanges SET  amount_to = %s, fee_from = %s, address_from = %s, address_to = %s, hash_from = %s, hash_to = %s, time_from = %s, block_nr = %s WHERE id = %s",
+                                            (exchange_details["outgoingCoin"], fee_from, exchange_details["address"], exchange_details["withdraw"], transaction["hash"], exchange_details["transaction"], time_transaction.strftime('%Y-%m-%d %H:%M:%S'), (last_block_number - number), exchange["id"]))
                                         Database_manager.db.commit()
                                         Corresponding_tx.search_corresponding_transaction(exchange_details["outgoingType"], exchange_details["transaction"], exchange["id"])
                                     except:

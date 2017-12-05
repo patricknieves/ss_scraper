@@ -46,7 +46,7 @@ def get_ethereum_transaction(new_exchanges):
             if transactions:
                 # Check if Block much older than Exchanges
                 time_oldest_transaction = datetime.datetime.utcfromtimestamp(filtered_new__exchanges[-1]["timestamp"])
-                time_block = datetime.datetime.strptime(transactions[0]["time"].replace("T","")[:-5],"%Y-%m-%d%H:%M:%S")
+                time_block = datetime.datetime.strptime(transactions[0]["time"].replace("T"," ")[:-5],"%Y-%m-%d %H:%M:%S")
                 if ((time_oldest_transaction - time_block)).total_seconds() > 180:
                     return filtered_new__exchanges
 
@@ -64,8 +64,8 @@ def get_ethereum_transaction(new_exchanges):
                                 # Update DB
                                 try:
                                     Database_manager.cur.execute(
-                                        "UPDATE exchanges SET amount_to=%s, fee_from=%s, address_from=%s, address_to=%s, hash_from=%s, hash_to=%s, time_from=%s WHERE id=%s",
-                                        (exchange_details["outgoingCoin"],(transaction["gasUsed"]*(transaction["price"]/ 1E+18)),exchange_details["address"],exchange_details["withdraw"],transaction["hash"],exchange_details["transaction"],transaction["time"].replace("T"," ")[:-5],exchange["id"]))
+                                        "UPDATE exchanges SET amount_to=%s, fee_from=%s, address_from=%s, address_to=%s, hash_from=%s, hash_to=%s, time_from=%s, block_nr=%s WHERE id=%s",
+                                        (exchange_details["outgoingCoin"],(transaction["gasUsed"]*(transaction["price"]/ 1E+18)),exchange_details["address"],exchange_details["withdraw"],transaction["hash"],exchange_details["transaction"],transaction["time"].replace("T"," ")[:-5], (last_block_number - number),exchange["id"]))
                                     Database_manager.db.commit()
                                     Corresponding_tx.search_corresponding_transaction(exchange_details["outgoingType"], exchange_details["transaction"], exchange["id"])
                                 except:
