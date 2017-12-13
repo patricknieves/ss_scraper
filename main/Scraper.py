@@ -7,6 +7,7 @@ import Ether
 import Litecoin
 import Database_manager
 
+
 def main():
     # Create MySQL Database and connect
     Database_manager.initialize_db()

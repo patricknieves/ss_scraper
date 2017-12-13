@@ -51,7 +51,7 @@ def create_table_shapeshift():
 def create_table_cmc():
     db = MySQLdb.connect(host="localhost", user="root", passwd="Sebis2017", db="scraper")
     cur = db.cursor()
-    cur.execute("CREATE TABLE IF NOT EXISTS shapeshift (symbol varchar(45) NOT NULL, fee double DEFAULT NULL, PRIMARY KEY (symbol))")
+    cur.execute("CREATE TABLE IF NOT EXISTS coinmarketcap (symbol varchar(45) NOT NULL, name varchar(45) DEFAULT NULL, value double DEFAULT NULL, PRIMARY KEY (symbol))")
     db.close()
 
 
